@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import "primereact/resources/themes/lara-light-indigo/theme.css";  
+import "primereact/resources/primereact.min.css";
+import "primeicons/primeicons.css";                                
+
+import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
+import './App.scss';
+import { Button } from 'primereact/button';
+
+ 
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		<BrowserRouter>
+			<div className="App">
+				<button className='tw-bg-orange-600 tw-text-white tw-p-2 tw-mr-4'>Test Tailwind Button</button>
+				<Button label="Prime Button"  />
+
+				<Routes>
+					{/* <Route path='/123' element={null}></Route> */}
+				</Routes>
+
+			</div>
+		</BrowserRouter>
+	);
 }
 
 export default App;
