@@ -5,22 +5,19 @@ import "primeicons/primeicons.css";
 import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 import "./App.scss";
 import { Button } from "primereact/button";
+import Header from "./components/Header";
+import SideBar from "./components/Sidebar";
 import ProfilePage from "./pages/ProfilePage";
+import AppliedPage from "./pages/AppliedPage";
+
+import JobsPage from "./pages/JobsPage";
+import BaseLayoutPage from "./pages/BaseLayoutPage";
 
 function App() {
   return (
     <BrowserRouter>
       <div className="App">
-        <button className="tw-bg-orange-600 tw-text-white tw-p-2 tw-mr-4">
-          Test Tailwind Button
-        </button>
-        <Button label="Prime Button" />
-
-        <Routes>
-          <Route path="/profile" element={<ProfilePage />} />
-
-          {/* <Route path='/123' element={null}></Route> */}
-        </Routes>
+        <BaseLayoutPage></BaseLayoutPage>
       </div>
     </BrowserRouter>
   );

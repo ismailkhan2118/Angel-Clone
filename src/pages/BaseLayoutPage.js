@@ -1,0 +1,25 @@
+import { Route, Routes, BrowserRouter } from "react-router-dom";
+import SideBar from "../components/Sidebar";
+import JobsPage from "./JobsPage";
+import ProfilePage from "./ProfilePage";
+import AppliedPage from "./AppliedPage";
+import "./BaseLayoutPage.scss"
+import Header from "../components/Header";
+function BaseLayoutPage() {
+    return (
+        <div>
+            <Header></Header>
+            <div className="baselayout-div">
+
+                <div>{<SideBar />}</div>
+                <div className="pages-div">
+                    <Routes>
+                        <Route path="Profile" element={<ProfilePage />}></Route>
+                        <Route path="Jobs" element={<JobsPage />}></Route>
+                        <Route path="Applied" element={<AppliedPage />}></Route>
+                    </Routes>
+                </div>
+            </div>
+        </div>)
+}
+export default BaseLayoutPage;
