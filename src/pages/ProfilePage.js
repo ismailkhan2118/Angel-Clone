@@ -1,6 +1,6 @@
 import "primeicons/primeicons.css";
 
-import "./ProfilePage.css";
+import "./ProfilePage.scss";
 import React from "react";
 import { useState } from "react";
 
