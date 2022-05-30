@@ -1,10 +1,15 @@
 div {
-  &.baselayout-div {
+  // &.baselayout-div {
+  //   padding: 0;
+  //   margin: %;
+  // }
+  &.pages-div {
+    // padding: 10px;
+    margin-left: 05em;
+  }
+  &.baselayout-sidebar-pages {
     display: flex;
     justify-items: center;
     padding: 0px;
-  }
-  &.pages-div {
-    padding: 10px;
   }
 }

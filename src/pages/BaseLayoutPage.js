@@ -6,10 +6,11 @@ import AppliedPage from "./AppliedPage";
 import "./BaseLayoutPage.scss"
 import Header from "../components/Header";
 function BaseLayoutPage() {
+
     return (
-        <div>
+        <div className="baselayout-main-div">
             <Header></Header>
-            <div className="baselayout-div">
+            <div className="baselayout-sidebar-pages">
 
                 <div>{<SideBar />}</div>
                 <div className="pages-div">

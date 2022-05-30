@@ -1,11 +1,11 @@
 div {
-  & .header-div {
-    background-color: mintcream;
-    height: 35px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
+  // & .header-div {
+  //   background-color: mintcream;
+  //   height: 35px;
+  //   display: flex;
+  //   align-items: center;
+  //   justify-content: space-between;
+  // }
   &.img-div {
     width: 50px;
     height: 35px;
@@ -14,12 +14,18 @@ div {
   & .img-div > img {
     border-radius: 50%;
     width: 100px;
-    height: 35x;
+    height: 35px;
   }
   &.drop-down-img {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    padding: 100px;
+    // padding: 8px;
+  }
+  &.header-content-div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #f0f8ff;
   }
 }
