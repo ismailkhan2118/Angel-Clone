@@ -7,7 +7,6 @@ import './App.scss';
 
 import BaseLayoutPage from "./pages/BaseLayoutPage";
 
-
 function App() {
 	return (
 		<BrowserRouter>
