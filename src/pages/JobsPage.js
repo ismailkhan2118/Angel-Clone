@@ -30,6 +30,8 @@ function JobsPage() {
 
             </div>
             <JobsCard></JobsCard>
+            <JobsCard></JobsCard>
+            <JobsCard></JobsCard>
         </div>)
 
 }
