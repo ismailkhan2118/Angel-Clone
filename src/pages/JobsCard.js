@@ -15,7 +15,6 @@ function JobsCard() {
                     </div>
                 </div>
                 <div className="jobs-card-company-hiring">
-
                 </div>
                 <div className="jobs-card-company-role">
                     <div className="company-role-salary">

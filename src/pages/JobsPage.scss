@@ -71,5 +71,10 @@ span:hover {
 button {
   &.filter-btn {
     color: #0f6fff;
+    // width: 960px;
   }
+}
+.dialog-page {
+  background-color: #000 !important;
+  width: 960px;
 }
