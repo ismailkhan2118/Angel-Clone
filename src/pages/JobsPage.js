@@ -8,7 +8,15 @@ import JobsCard from "./JobsCard";
 
 function JobsPage() {
     const [value, setValue] = useState([]);
-    const [inputvalue, setInputValue] = useState([]);
+    // const [inputvalue, setInputValue] = useState([]);
+    const customChip = (item) => {
+        return (
+            <div className="custom-chips">
+
+                <i className="pi pi-user-plus"></i>
+            </div>
+        );
+    }
     return (
         <div className="jobs-page-container">
             <div className="jobs-h1-div">
@@ -20,13 +28,14 @@ function JobsPage() {
             </nav>
             <div className="jobs-filters-div">
                 <div className="chips">
-                    <Chips className="jobs-title-chip" value={value} onChange={(e) => setValue(e.value)} placeholder="Add a job title"></Chips>
+                    <Chips className="jobs-title-chip" value={value} onChange={(e) => setValue(e.value)} placeholder="Add a job title" ></Chips>
                 </div>
                 <div className="filter-logo-btn">
                     <img className="img-filter" src="https://cdn-icons.flaticon.com/png/512/2516/premium/2516722.png?token=exp=1653922188~hmac=26eb89c7ff5b3841b5ed12949cfc69c2" alt="img-filter" />
 
                     <button className="filter-btn"> Filters</button>
                 </div>
+
 
             </div>
             <JobsCard></JobsCard>
