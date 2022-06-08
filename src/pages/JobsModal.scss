@@ -1,6 +1,95 @@
 div {
   &.jobs-modal-container {
-    background-color: blueviolet;
     height: 100vh;
+  }
+  &.jobs-modal-header {
+    height: 64px;
+    border: 1px solid black;
+    background-color: azure;
+  }
+  &.jobs-modal-filter {
+    height: 50px;
+    background-color: aquamarine;
+    position: sticky;
+    top: 1px;
+  }
+  &.salary-skills {
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &.jobs-modal-salary-skills {
+    display: flex;
+    justify-content: space-between;
+  }
+  &.jobs-modal-salary {
+    width: 440.5px;
+    height: 350px;
+    border: 1px solid #0f6fff;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+  }
+  &.jobs-modal-skills {
+    width: 440.5px;
+    height: 350px;
+    border: 1px solid #0f6fff;
+    border-radius: 5px;
+  }
+  &.type-experience {
+    display: flex;
+    justify-content: space-between;
+    height: 40px;
+    align-items: center;
+    margin: 5px;
+  }
+  &.jobs-modal-type-experience {
+    display: flex;
+    justify-content: space-between;
+  }
+  &.jobs-modal-type {
+    width: 440.5px;
+    height: 350px;
+    border: 1px solid #0f6fff;
+    border-radius: 5px;
+  }
+  &.jobs-modal-experience {
+    width: 440.5px;
+    height: 350px;
+    border: 1px solid #0f6fff;
+    border-radius: 5px;
+  }
+  &.jobs-modal-salary:hover {
+    background-color: #f2f8ff;
+  }
+  &.jobs-modal-skills:hover {
+    background-color: #f2f8ff;
+  }
+  &.jobs-modal-type:hover {
+    background-color: #f2f8ff;
+  }
+  &.jobs-modal-experience:hover {
+    background-color: #f2f8ff;
+  }
+}
+.modal-salary-range {
+  margin-top: 70px;
+}
+.modal-skills-input {
+  margin-top: 30px;
+}
+.modal-skills-slider {
+  width: 400px;
+  margin-left: 5px;
+}
+h1 {
+  &.salary-h2 {
+    font-size: 18px;
+    margin-left: 10px;
+    position: relative;
+    top: 20px;
+    font-family: Helvetica;
+    font-weight: 500;
   }
 }

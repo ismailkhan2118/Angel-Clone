@@ -1,6 +1,5 @@
 import React from "react"
 import "./JobsCard.scss"
-import homeicon from "../assets/home-icon.svg"
 
 function JobsCard() {
     return (
