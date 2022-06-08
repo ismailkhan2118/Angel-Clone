@@ -1,0 +1,96 @@
+div {
+  &.jobs-card {
+    display: flex;
+    flex-direction: column;
+    min-width: 0px;
+    min-height: 0px;
+    box-shadow: rgba(0, 12, 32, 0.04) 0px 0px 1px,
+      rgba(3, 17, 38, 0.106) 0px 2px 6px;
+    width: 960px;
+    height: 268px;
+    margin-bottom: 16px;
+    background-color: rgb(255, 255, 255);
+    position: relative;
+    border-radius: 8px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(242, 244, 247);
+    border-image: initial;
+  }
+  &.jobs-card-company-role {
+    margin-top: 95px;
+    width: 926px;
+    height: 52px;
+    border: 1px solid #d2d9e5;
+    display: flex;
+    justify-content: space-between;
+    padding: 12px;
+    margin-left: 16px;
+    border-radius: 5px;
+  }
+  &.jobs-card-company-name {
+    padding: 16px;
+    display: flex;
+    align-items: flex-start;
+  }
+  &.jobs-card-company-name-description {
+    padding-left: 13px;
+  }
+  &.company-role-salary {
+    display: flex;
+    align-items: center;
+    
+  }
+}
+h1 {
+  &.jobs-card-h1 {
+    font-family: Helvetica;
+
+    color: #050c26;
+    font-weight: 500;
+    font-size: 18px;
+  }
+}
+img {
+  &.company-img {
+    width: 46px;
+    height: 46px;
+    border: 1px solid #d2d9e5;
+  }
+}
+p {
+  &.jobs-card-company-description {
+    font-size: 14px;
+  }
+}
+button {
+  &.save-btn {
+    text-align: center;
+    color: #0a6cff;
+
+    border: 1px solid #0a6cff;
+    height: 35px;
+    border-radius: 10%;
+    width: 55px;
+    position: relative;
+    bottom: 5px;
+  }
+  &.apply-btn {
+    background-color: #0a6cff;
+    text-align: center;
+    position: relative;
+    bottom: 5px;
+    margin-left: 10px;
+    height: 35px;
+    width: 55px;
+    color: whitesmoke;
+    border-radius: 10%;
+  }
+}
+h2 {
+  &.jobs-card-h2 {
+    font-weight: 500;
+    font-size: 14px;
+    font-family: Helvetica;
+  }
+}
