@@ -9,16 +9,10 @@ h2 {
   display: flex;
   flex-direction: row;
   justify-content: center; 
-<<<<<<< HEAD:src/pages/ProfilePage.scss
-  
-  border: 1px solid #d2d9e5;
-=======
->>>>>>> 7afe1001d0e07f48bb144638ecb0bf8069605bd0:src/pages/ProfilePage.css
   border-radius: 4px;
 }
 .main-container{
   border: 1px solid #d2d9e5;
-
 }
 .pane-wrapper{
   display: flex;
@@ -50,6 +44,17 @@ h2 {
 }
 .chips-input{
   border: none;
+}
+.achiev-span{
+  text-align: right;
+  color: #9194A0;
+  
+}
+.img-style{
+  max-width:64px;
+  max-height:64px;
+  border-radius: 50%;
+  
 }
   /* /* text-align: center;
   width:90%;

@@ -40,3 +40,20 @@ export const experience = [
   { label: "3", value: "3" },
   { label: "4+", value: "4+" },
 ];
+
+export const Degree = [
+  { label: "Bachelor of Arts", value: "Bachelor of Arts" },
+  { label: "Bachelor of Engineering", value: "Bachelor of Engineering" },
+  {
+    label: "Bachelor of Business Administration",
+    value: "Bachelor of Business Administration",
+  },
+  { label: "Bachelor of Science", value: "Bachelor of Science" },
+  { label: "Master of Arts", value: "Master of Arts" },
+  {
+    label: "Master of Business Administration",
+    value: "Master of Business Administration",
+  },
+  { label: "Master of Science", value: "Master of Science" },
+  { label: "Master of Degree", value: "Master of Degree" },
+];
