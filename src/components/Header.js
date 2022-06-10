@@ -5,8 +5,9 @@ function Header() {
     return (
         <div className="header-div">
             <div className="header-content-div">
-                <h1>Unicorn List</h1>
-
+                <div className="angel-list-img-div">
+                    <img className="angel-list-img" src="https://angel.co/images/logo/AngelList_Black_Lockup.png" alt="angleimg" />
+                </div>
                 <div className="drop-down-img">
                     <select>
                         <option value="Ready To interview" selected>Ready To interview  </option>
