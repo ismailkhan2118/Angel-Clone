@@ -13,6 +13,9 @@ h2 {
 }
 .main-container{
   border: 1px solid #d2d9e5;
+  display:flex;
+  flex-direction: center;
+  justify-content: center;
 }
 .pane-wrapper{
   display: flex;
