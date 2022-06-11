@@ -7,7 +7,7 @@ div {
     display: none;
   }
   &.dialog-page {
-    width: 752px;
+    width: 960px;
     padding: 0px;
   }
   &.applying-company-container {
@@ -24,6 +24,13 @@ div {
   &.applying-user {
     width: 450px;
   }
+  &.username-edit {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 40px;
+    padding: 20px;
+  }
 }
 h5 {
   color: rgb(123, 145, 177);
@@ -38,4 +45,11 @@ h4 {
 }
 hr {
   margin-top: 10px;
+}
+.update {
+  color: #0a6cff;
+  font-size: small;
+}
+.update:hover {
+  text-decoration: underline;
 }

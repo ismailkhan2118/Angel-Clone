@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import "./JobsCardApplyModal.scss"
 
 function JobsCardApplyModal(props) {
@@ -13,7 +14,10 @@ function JobsCardApplyModal(props) {
                 <div className='applying-user'>
                     <h5>Your Application</h5>
                     <hr />
-                    <h4>User Name</h4>
+                    <div className='username-edit'>
+                        <h4>User Name</h4>
+                        <Link to="/profile" ><p className='update'>Update</p></Link>
+                    </div>
                 </div>
             </div>
 
