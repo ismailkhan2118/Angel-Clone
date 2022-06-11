@@ -14,13 +14,7 @@ function JobsPage() {
   const [value, setValue] = useState([]);
   const [position, setPosition] = useState("center");
   const dialogFuncMap = { displayBasic2: setDisplayBasic2 };
-  const customChip = (item) => {
-    return (
-      <div className="custom-chips">
-        <i className="pi pi-user-plus"></i>
-      </div>
-    );
-  };
+
   const onClick = (name, position) => {
     dialogFuncMap[`${name}`](true);
 

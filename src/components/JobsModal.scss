@@ -26,7 +26,8 @@ div {
   &.jobs-modal-salary {
     width: 440.5px;
     height: 350px;
-    border: 1px solid #0f6fff;
+    border: 1px solid #e4e7f0;
+
     border-radius: 5px;
     display: flex;
     flex-direction: column;
@@ -34,7 +35,8 @@ div {
   &.jobs-modal-skills {
     width: 440.5px;
     height: 350px;
-    border: 1px solid #0f6fff;
+    border: 1px solid #e4e7f0;
+
     border-radius: 5px;
   }
   &.type-experience {
@@ -51,26 +53,31 @@ div {
   &.jobs-modal-type {
     width: 440.5px;
     height: 350px;
-    border: 1px solid #0f6fff;
+    border: 1px solid #e4e7f0;
     border-radius: 5px;
   }
   &.jobs-modal-experience {
     width: 440.5px;
     height: 350px;
-    border: 1px solid #0f6fff;
+    border: 1px solid #e4e7f0;
+
     border-radius: 5px;
   }
   &.jobs-modal-salary:hover {
     background-color: #f2f8ff;
+    border: 1px solid #0f6fff;
   }
   &.jobs-modal-skills:hover {
     background-color: #f2f8ff;
+    border: 1px solid #0f6fff;
   }
   &.jobs-modal-type:hover {
     background-color: #f2f8ff;
+    border: 1px solid #0f6fff;
   }
   &.jobs-modal-experience:hover {
     background-color: #f2f8ff;
+    border: 1px solid #0f6fff;
   }
 }
 .modal-salary-range {
@@ -94,6 +101,6 @@ h1 {
   }
 }
 
-.p-slider-range{
+.p-slider-range {
   padding: 2px;
 }

@@ -1,0 +1,41 @@
+div {
+  &.apply-modal-container {
+    display: flex;
+    padding: 0px;
+  }
+  &.p-dialog .p-dialog-header {
+    display: none;
+  }
+  &.dialog-page {
+    width: 752px;
+    padding: 0px;
+  }
+  &.applying-company-container {
+    background-color: #f2f4f7;
+    width: 240px;
+    height: 619px;
+    padding: 24px;
+  }
+  &.applying-user-container {
+    width: 240px;
+    height: 619px;
+    padding: 24px;
+  }
+  &.applying-user {
+    width: 450px;
+  }
+}
+h5 {
+  color: rgb(123, 145, 177);
+  font-size: 14px;
+  font-family: Helvetica;
+  letter-spacing: 2px;
+}
+h4 {
+  font-size: 14px;
+  font-family: Helvetica;
+  letter-spacing: 2px;
+}
+hr {
+  margin-top: 10px;
+}

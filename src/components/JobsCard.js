@@ -1,7 +1,45 @@
 import React from "react"
 import "./JobsCard.scss"
+import { useState } from "react"
+import { Dialog } from "primereact/dialog"
+import { Button } from "primereact/button";
+import JobsCardApplyModal from "./JobsCardApplyModal";
+
 
 function JobsCard() {
+    const [displayBasic2, setDisplayBasic2] = useState(false);
+    const [position, setPosition] = useState("center");
+    const dialogFuncMap = { displayBasic2: setDisplayBasic2 };
+
+    const onClick = (name, position) => {
+        dialogFuncMap[`${name}`](true);
+
+        if (position) {
+            setPosition(position);
+        }
+    };
+
+    const onHide = (name) => {
+        dialogFuncMap[`${name}`](false);
+    };
+
+    const renderFooter = (name) => {
+        return (
+            <div>
+                <Button
+                    label="No"
+                    icon="pi pi-times"
+                    onClick={() => onHide(name)}
+                    className="p-button-text"
+                />
+                <Button
+
+                />
+            </div>
+        );
+    };
+
+
     return (
         <div className="jobs-card-container">
             <div className="jobs-card">
@@ -23,11 +61,21 @@ function JobsCard() {
 
                     </div>
                     <div className="jobs-card-apply-save">
-                        <button className="save-btn">Save</button>
-                        <button className="apply-btn">Apply</button>
+                        <button className="save-btn"  >Save</button>
+                        <button className="apply-btn" onClick={() => onClick("displayBasic2")}>Apply</button>
                     </div>
                 </div>
             </div>
+            <Dialog
+                dismissableMask={true}
+                className="dialog-page"
+                // header="Apply Filters"
+                visible={displayBasic2}
+                footer={renderFooter("displayBasic2")}
+                onHide={() => onHide("displayBasic2")}
+            >
+                <JobsCardApplyModal></JobsCardApplyModal>
+            </Dialog>
         </div>
     )
 }
