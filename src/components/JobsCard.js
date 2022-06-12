@@ -71,10 +71,10 @@ function JobsCard() {
                 className="dialog-page"
                 // header="Apply Filters"
                 visible={displayBasic2}
-                footer={renderFooter("displayBasic2")}
+                // footer={renderFooter("displayBasic2")}
                 onHide={() => onHide("displayBasic2")}
             >
-                <JobsCardApplyModal></JobsCardApplyModal>
+                <JobsCardApplyModal disable={onHide}></JobsCardApplyModal>
             </Dialog>
         </div>
     )
