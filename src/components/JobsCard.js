@@ -3,6 +3,8 @@ import "./JobsCard.scss"
 import { useState } from "react"
 import { Dialog } from "primereact/dialog"
 import { Button } from "primereact/button";
+import { Slider } from "primereact/slider";
+
 import JobsCardApplyModal from "./JobsCardApplyModal";
 
 

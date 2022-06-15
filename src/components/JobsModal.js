@@ -6,6 +6,7 @@ import { InputText } from "primereact/inputtext";
 
 function JobsModal() {
   const [value5, setValue5] = useState([10, 95]);
+  const [experience, setExperrience] = useState([0, 8]);
   const [value1, setValue1] = useState("");
   return (
     <div className="jobs-modal-container">
@@ -44,12 +45,47 @@ function JobsModal() {
         </div>
       </div>
       <div className="type-experience">
-        <h2>Type</h2>
+        <h2>Job Details</h2>
         <h2>Experience</h2>
       </div>
       <div className="jobs-modal-type-experience">
-        <div className="jobs-modal-type"></div>
-        <div className="jobs-modal-experience"></div>
+        <div className="jobs-modal-type">
+          <div className="modal-checkbox">
+            <h2>Jobs Type</h2>
+            <hr />
+            <div>
+              <input type="checkbox" id="f-t" />
+              <label htmlFor="f-t">Full Time  </label>
+            </div>
+            <div>
+              <input type="checkbox" id="intern" />
+              <label className="intern">Internship </label>
+            </div>
+            <div>
+              <input type="checkbox" id="contract" onChange />
+              <label className="contract">  Contract</label>
+            </div>
+            <div>
+              <input type="checkbox" id="co-founder" onChange />
+              <label className="co-founder"> Co Founder</label>
+            </div>
+
+
+          </div>
+        </div>
+        <div className="jobs-modal-experience">
+          <h5 className="">
+            {" "}
+            ${experience[0]}Years-${experience[1]}Years          </h5>
+          <Slider
+
+            className="modal-skills-slider"
+            value={experience}
+            onChange={(e) => setExperrience(e.value)}
+            max={20}
+            range="200"
+          />
+        </div>
       </div>
     </div>
   );

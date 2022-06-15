@@ -17,6 +17,7 @@ div {
     border-color: rgb(242, 244, 247);
     border-image: initial;
   }
+
   &.jobs-card-company-role {
     margin-top: 95px;
     width: 926px;
@@ -39,7 +40,6 @@ div {
   &.company-role-salary {
     display: flex;
     align-items: center;
-    
   }
 }
 h1 {
