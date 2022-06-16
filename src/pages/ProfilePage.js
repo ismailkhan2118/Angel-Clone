@@ -86,7 +86,7 @@ export default function ProfilePage() {
 
   return (
     <div className="profile-container">
-      <h1>Edit your Unicorn List Profile</h1>
+      {/* <h1>Edit your Unicorn List Profile</h1> */}
       <div className="main-container">
         {/* <h1>Edit your Unicorn List Profile</h1> */}
         <form onSubmit={handleSubmit}>
@@ -115,9 +115,12 @@ export default function ProfilePage() {
                     <div>
                       <h1>{user}</h1>
                     </div>
-                    <div className="img-style">
-                      <img src="https://data.whicdn.com/images/305312729/original.jpg?t=1515972463" />
-                    </div>
+
+                    <img
+                      className="img-style"
+                      src="https://data.whicdn.com/images/305312729/original.jpg?t=1515972463"
+                    />
+
                     <div>
                       <label htmlFor="Location">Where are you based</label>
                       <div>
@@ -251,7 +254,7 @@ export default function ProfilePage() {
                 <div className="pane-wrapper">
                   <div className="left-pane">
                     <div className="tw-font-semibold tw-text-black">
-                      Your Work Exoerience
+                      Your Work Experience
                     </div>
                     <div classname="section-description">
                       What other positions have you held?
