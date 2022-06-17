@@ -27,7 +27,7 @@ function JobsCardApplyModal(props) {
                             <h5>let them know why you are good fit </h5>
                         </div>
                         <div className="company-img">
-                            <img className="apply-img" src='https://photos.angel.co/startups/i/7391225-8d71f4b8be673bbe41c4d9fe30675c06-medium_jpg.jpg?buster=1577950772' alt='company mame ' />
+                            <img className="apply-img" src={props.coimg} alt='company mame ' />
                         </div>
 
                     </div>

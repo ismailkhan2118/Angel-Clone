@@ -8,7 +8,7 @@ import { Slider } from "primereact/slider";
 import JobsCardApplyModal from "./JobsCardApplyModal";
 
 
-function JobsCard() {
+function JobsCard(props) {
     const [displayBasic2, setDisplayBasic2] = useState(false);
     const [position, setPosition] = useState("center");
     const dialogFuncMap = { displayBasic2: setDisplayBasic2 };
@@ -47,19 +47,20 @@ function JobsCard() {
             <div className="jobs-card">
                 <div className="jobs-card-company-name">
 
-                    <img className="company-img" src="" alt="" />
+                    <img className="company-img" src={props.coimg} alt="" />
                     <div className="jobs-card-company-name-description">
-                        <h1 className="jobs-card-h1">Faang</h1>
-                        <p className="jobs-card-company description ">Company Description</p>
+                        <h1 className="jobs-card-h1">{props.coname}</h1>
+                        <p className="jobs-card-company description ">{props.codescription}</p>
                     </div>
                 </div>
                 <div className="jobs-card-company-hiring">
                 </div>
                 <div className="jobs-card-company-role">
                     <div className="company-role-salary">
-                        <h2 className="jobs-card-h2">Software intern -Frontend(React) </h2>
-                        <p>Location</p>
-                        <p>salary</p>
+                        <h2 className="jobs-card-h2">Role {props.corole} </h2>
+                        <p>  {props.colocation}</p>
+
+                        <p> salary {props.cosalary}</p>
 
                     </div>
                     <div className="jobs-card-apply-save">
@@ -76,7 +77,7 @@ function JobsCard() {
                 // footer={renderFooter("displayBasic2")}
                 onHide={() => onHide("displayBasic2")}
             >
-                <JobsCardApplyModal disable={onHide}></JobsCardApplyModal>
+                <JobsCardApplyModal coimg={props.coimg}></JobsCardApplyModal>
             </Dialog>
         </div>
     )
