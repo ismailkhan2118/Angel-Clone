@@ -23,7 +23,7 @@ function JobsCardApplyModal(props) {
                     </div>
                     <div className='companyname-profile'>
                         <div className='company-name'>
-                            <h4>Your hiring contact is Faang</h4>
+                            <h4>Your hiring contact is {props.coname}</h4>
                             <h5>let them know why you are good fit </h5>
                         </div>
                         <div className="company-img">

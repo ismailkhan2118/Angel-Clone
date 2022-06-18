@@ -77,7 +77,7 @@ function JobsCard(props) {
                 // footer={renderFooter("displayBasic2")}
                 onHide={() => onHide("displayBasic2")}
             >
-                <JobsCardApplyModal coimg={props.coimg}></JobsCardApplyModal>
+                <JobsCardApplyModal coimg={props.coimg} coname={props.coname}></JobsCardApplyModal>
             </Dialog>
         </div>
     )
