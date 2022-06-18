@@ -1,0 +1,104 @@
+div {
+  &.apply-modal-container {
+    display: flex;
+    padding: 0px;
+  }
+  &.p-dialog .p-dialog-header {
+    display: none;
+  }
+  &.dialog-page {
+    width: 960px;
+    padding: 0px;
+  }
+  &.applying-company-container {
+    background-color: #f2f4f7;
+    width: 240px;
+    height: 619px;
+    padding: 24px;
+  }
+  &.applying-user-container {
+    width: 240px;
+    height: 619px;
+    padding: 24px;
+  }
+  &.applying-user {
+    width: 450px;
+  }
+  &.username-edit {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 40px;
+    padding: 20px;
+  }
+  &.companyname-profile {
+    display: flex;
+    height: 46px;
+    justify-content: space-between;
+    padding: 24px;
+  }
+  &.textarea-input {
+    margin-top: 20px;
+    padding: 24px;
+  }
+  &.btns {
+    padding: 24px;
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+h5 {
+  color: rgb(123, 145, 177);
+  font-size: 14px;
+  font-family: Helvetica;
+  letter-spacing: 2px;
+}
+h4 {
+  font-size: 14px;
+  font-family: Helvetica;
+  letter-spacing: 2px;
+}
+hr {
+  margin-top: 10px;
+}
+.update {
+  color: #0a6cff;
+  font-size: small;
+}
+.update:hover {
+  text-decoration: underline;
+}
+img {
+  &.apply-img {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+  }
+}
+textarea {
+  &.apply-textarea {
+    width: 464px;
+    border: 1px solid #e4e7f0;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+}
+button {
+  &.cancel-btn {
+    height: 35px;
+    border-radius: 10%;
+    width: 55px;
+    position: relative;
+    bottom: 5px;
+  }
+  &.sending-btn {
+    background-color: #0a6cff;
+    text-align: center;
+    position: relative;
+    bottom: 5px;
+    margin-left: 10px;
+    height: 35px;
+    width: 125px;
+    color: whitesmoke;
+    border-radius: 05%;
+  }
+}

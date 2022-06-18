@@ -5,10 +5,13 @@ function Header() {
   return (
     <div className="header-div">
       <div className="header-content-div">
-        <img
-          style={{ width: "7.5rem", marginLeft: "2rem" }}
-          src="https://angel.co/images/logo/AngelList_Black_Lockup.png"
-        />
+        <div className="angel-list-img-div">
+          <img
+            className="angel-list-img"
+            src="https://angel.co/images/logo/AngelList_Black_Lockup.png"
+            alt="angleimg"
+          />
+        </div>
         <div className="drop-down-img">
           <select>
             <option value="Ready To interview" selected>

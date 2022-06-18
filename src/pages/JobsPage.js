@@ -3,24 +3,18 @@ import "./JobsPage.scss";
 import { Chips } from "primereact/chips";
 import { InputText } from "primereact/inputtext";
 import { useState } from "react";
-import JobsCard from "./JobsCard";
+import JobsCard from "../components/JobsCard";
 import { Button } from "primereact/button";
 
 import { Dialog } from "primereact/dialog";
-import JobsModal from "./JobsModal";
+import JobsModal from "../components/JobsModal";
 
 function JobsPage() {
   const [displayBasic2, setDisplayBasic2] = useState(false);
   const [value, setValue] = useState([]);
   const [position, setPosition] = useState("center");
   const dialogFuncMap = { displayBasic2: setDisplayBasic2 };
-  const customChip = (item) => {
-    return (
-      <div className="custom-chips">
-        <i className="pi pi-user-plus"></i>
-      </div>
-    );
-  };
+
   const onClick = (name, position) => {
     dialogFuncMap[`${name}`](true);
 
