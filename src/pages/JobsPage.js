@@ -101,12 +101,15 @@ function JobsPage() {
       </nav>
       <div className="jobs-filters-div">
         <div className="chips">
+
           <Chips
             className="jobs-title-chip"
             value={value}
             onChange={(e) => setValue(e.value)}
             placeholder="Add a job title"
           ></Chips>
+
+
         </div>
         <div
           className="filter-logo-btn"
@@ -134,9 +137,9 @@ function JobsPage() {
         <JobsModal></JobsModal>
       </Dialog>
 
-      {cardArray.map((data) => {
+      {cardArray.map((data, id) => {
         return (<JobsCard
-          key={data.id}
+          key={id}
           coimg={data.coimg}
           coname={data.coname}
           codescription={data.codescription}
