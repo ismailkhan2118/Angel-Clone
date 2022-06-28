@@ -8,6 +8,8 @@ h2 {
 .profile-container {
   display: flex;
   flex-direction: row;
+  width:50rem;
+  margin:0 auto;
 
   justify-content: center;
   border-radius: 4px;
@@ -57,6 +59,26 @@ h2 {
   max-width: 64px;
   max-height: 64px;
   border-radius: 50%;
+}
+.GPA-class{
+  input{
+    width: 50%;
+  }
+}
+.blue-btn{
+  text-align: center;
+  background-color:#0A6Cff;
+  color:#ffffff;
+  border-radius: 5px;
+  padding:10px 16px;
+  margin-left: 1rem;
+}
+.cancel-btn{
+  color:#525769;
+  padding:10px 16px;
+  text-align: center;
+  margin-left: 16px;
+
 }
 /* /* text-align: center;
   width:90%;
