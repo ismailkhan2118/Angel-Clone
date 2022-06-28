@@ -1,10 +1,12 @@
 import React from 'react';
+import LoginPageForm from '../components/LoginPageForm';
+import LoginPageImg from '../components/LoginPageImg';
 
 function LoginPage(props) {
     return (
         <div className='login-container'>
-            <h1>This is from Login page</h1>
-
+            <LoginPageForm></LoginPageForm>
+            <LoginPageImg></LoginPageImg>
         </div>
     );
 }
