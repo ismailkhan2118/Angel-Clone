@@ -1,9 +1,8 @@
 import React from 'react';
-import "./LoginPageForm.scss"
 
-function LoginPageForm(props) {
+function SignUpPageForm(props) {
     return (
-        <div className='login-page-form-container'>
+        <div>
             <div className='login-h1-div'>
                 <img src={"https://angel.co/assets/shared/angellist_logo_hand-242554a1b6fa9f574f4ee1488f18d011b3066c90989f8320c15961aedaada679.svg"} alt="anglelistlogo" />
                 <h1 className='login-h1'>Login</h1>
@@ -22,4 +21,4 @@ function LoginPageForm(props) {
     );
 }
 
-export default LoginPageForm;
+export default SignUpPageForm;
