@@ -1,7 +1,12 @@
 import React from 'react';
 import "./LoginPageForm.scss"
+import { useNavigate } from "react-router-dom";
 
 function LoginPageForm(props) {
+    const navigate = useNavigate()
+    const loginHandler = () => {
+        navigate("/home")
+    }
     return (
         <div className='login-page-form-container'>
             <div className='login-h1-div'>
@@ -12,11 +17,11 @@ function LoginPageForm(props) {
             <div className='login-input-div'>
                 <input className='login-input-1' type="email" placeholder='   Email'></input>
                 <input className='login-input-2' type="password" placeholder='   Password'></input>
-                <button className='login-btn'>Login</button>
+                <button className='login-btn' onClick={loginHandler}>Login</button>
             </div>
             <div className='login-signup-div'>
                 <p><b>Not Registerd ? </b>  </p>
-                <a href="/signup">Creat an Account </a>
+                <a href="/signup">Create an Account </a>
             </div>
         </div>
     );
