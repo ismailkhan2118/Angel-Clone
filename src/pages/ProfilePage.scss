@@ -29,7 +29,7 @@ h2 {
 }
 .right-pane {
   width: 36rem;
-  input {
+  input:not(input[type="checkbox"]) {
     width: 100%;
   }
   .p-dropdown {
@@ -39,6 +39,12 @@ h2 {
     width: 100%;
   }
 }
+
+input[type="checkbox"]{
+  width: 1rem;
+  height: 1rem;
+}
+
 .section-description {
   font-size: 14px;
 }
@@ -75,12 +81,23 @@ h2 {
 }
 .cancel-btn{
   color:#525769;
-  padding:10px 16px;
+  
   text-align: center;
-  margin-left: 16px;
+  margin-left: 8px;
+}
+
+.btns-div{
+  display:flex;
+  justify-content: flex-end;
+  text-align: center;
+  
 
 }
-/* /* text-align: center;
+.grey-pane{
+  background-color: #F2F4F7;
+  padding: 24px;
+}
+ /* text-align: center;
   width:90%;
   height: 500px;
   margin: 0 auto;
