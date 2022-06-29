@@ -15,9 +15,9 @@ function BaseLayoutPage() {
                 <div>{<SideBar />}</div>
                 <div className="pages-div">
                     <Routes>
-                        <Route path="Profile" element={<ProfilePage />}></Route>
-                        <Route path="Jobs" element={<JobsPage />}></Route>
-                        <Route path="Applied" element={<AppliedPage />}></Route>
+                        <Route path="/Profile" element={<ProfilePage />}></Route>
+                        <Route path="/Jobs" element={<JobsPage />}></Route>
+                        <Route path="/Applied" element={<AppliedPage />}></Route>
                     </Routes>
                 </div>
             </div>

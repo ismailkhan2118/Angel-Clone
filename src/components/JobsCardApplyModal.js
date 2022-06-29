@@ -36,13 +36,13 @@ function JobsCardApplyModal(props) {
                     </div>
                     <div className='btns'>
                         <button className='cancel-btn'  >Cancel</button>
-                        <button className='sending-btn'>Send Application</button>
+                        <button className='sending-btn' >Send Application</button>
                     </div>
                 </div>
             </div>
 
 
-        </div>
+        </div >
     );
 }
 

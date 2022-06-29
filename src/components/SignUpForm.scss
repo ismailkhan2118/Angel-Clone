@@ -1,0 +1,12 @@
+div {
+  &.singupform-container {
+    padding-top: 50px;
+    width: 677px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  &.signup-h1-div {
+    width: 324px;
+  }
+}

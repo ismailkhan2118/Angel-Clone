@@ -68,8 +68,8 @@ export default function ProfilePage() {
             alt={option.name}
             src="images/flag/flag_placeholder.png"
             onError={(e) =>
-              (e.target.src =
-                "https://www.primefaces.org/wp-content/uploads/2020/05/placeholder.png")
+            (e.target.src =
+              "https://www.primefaces.org/wp-content/uploads/2020/05/placeholder.png")
             }
             className={`flag flag-${option.code.toLowerCase()}`}
           />
@@ -260,7 +260,7 @@ export default function ProfilePage() {
                     <div className="tw-font-semibold tw-text-black">
                       Your Work Experience
                     </div>
-                    <div classname="section-description">
+                    <div className="section-description">
                       What other positions have you held?
                     </div>
                   </div>

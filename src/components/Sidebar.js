@@ -3,7 +3,7 @@ import "./SideBar.scss";
 function SideBar() {
   return (
     <div className="sidebar-div">
-      <Link to="/">
+      <Link to="home">
         {" "}
         <div className="icons-div">
           <div className="home-svg-div">
@@ -17,7 +17,7 @@ function SideBar() {
           </div>
         </div>
       </Link>
-      <Link to="/Profile">
+      <Link to="Profile">
         {" "}
         <div className="profile-svg-div">
           <svg fill="none" height="24" viewBox="0 0 24 26" width="24">
@@ -40,7 +40,7 @@ function SideBar() {
         </div>
       </Link>
 
-      <Link to="/Jobs">
+      <Link to="Jobs">
         {" "}
         <div className="jobs-svg-div">
           <svg fill="none" height="36" viewBox="0 0 16 16" width="24">
