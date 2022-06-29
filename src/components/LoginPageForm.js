@@ -1,12 +1,13 @@
 import React from 'react';
 import "./LoginPageForm.scss"
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 function LoginPageForm(props) {
     const navigate = useNavigate()
     const loginHandler = () => {
         navigate("/home")
     }
+
     return (
         <div className='login-page-form-container'>
             <div className='login-h1-div'>
@@ -21,7 +22,7 @@ function LoginPageForm(props) {
             </div>
             <div className='login-signup-div'>
                 <p><b>Not Registerd ? </b>  </p>
-                <a href="/signup">Create an Account </a>
+                <NavLink to='/signup'>Create an Account</NavLink>
             </div>
         </div>
     );

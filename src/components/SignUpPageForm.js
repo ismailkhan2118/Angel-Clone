@@ -1,7 +1,9 @@
 import React from 'react';
 import "./SignUpForm.scss"
+import { NavLink, } from "react-router-dom"
 
 function SignUpPageForm(props) {
+
     return (
         <div className='singupform-container'>
             <div className='signup-h1-div'>
@@ -20,7 +22,7 @@ function SignUpPageForm(props) {
             </div>
             <div className='login-signup-div'>
                 <p><b>Already have  an Account ? </b>  </p>
-                <a href="/login">Log in </a>
+                <NavLink to="/login">Log in </NavLink>
             </div>
         </div>
     );
