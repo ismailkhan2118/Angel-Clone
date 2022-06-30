@@ -1,14 +1,12 @@
-import React from "react";
-import "./EducationCard.scss";
+import React from 'react';
 
 function educationCard(props) {
-  const { edu, saveEdu } = props;
-
-  return (
-    <div className="edu-card">
-      <div>{edu}</div>
-      <div>
-        {/* <button
+    return (
+        <div>
+            <div className="edu-card">
+                <div>{props.edu}</div>
+                <div>
+                    {/* <button
           onClick={() => {
             saveEdu(false);
           }}
@@ -16,10 +14,12 @@ function educationCard(props) {
           {" "}
           Edit
         </button> */}
-      </div>
-      educationCard
-    </div>
-  );
+                </div>
+                educationCard
+            </div>
+
+        </div>
+    );
 }
 
 export default educationCard;

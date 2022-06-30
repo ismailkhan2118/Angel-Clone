@@ -5,6 +5,7 @@ import { InputText } from "primereact/inputtext";
 import { useState } from "react";
 import JobsCard from "../components/JobsCard";
 import { Button } from "primereact/button";
+import Filterimg from "../assets/filter-img.jpg"
 
 import { Dialog } from "primereact/dialog";
 import JobsModal from "../components/JobsModal";
@@ -117,7 +118,7 @@ function JobsPage() {
         >
           <img
             className="img-filter"
-            src="https://cdn-icons.flaticon.com/png/512/2516/premium/2516722.png?token=exp=1653922188~hmac=26eb89c7ff5b3841b5ed12949cfc69c2"
+            src={Filterimg}
             alt="img-filter"
           />
 

@@ -69,8 +69,8 @@ export default function ProfilePage() {
             alt={option.name}
             src="images/flag/flag_placeholder.png"
             onError={(e) =>
-              (e.target.src =
-                "https://www.primefaces.org/wp-content/uploads/2020/05/placeholder.png")
+            (e.target.src =
+              "https://www.primefaces.org/wp-content/uploads/2020/05/placeholder.png")
             }
             className={`flag flag-${option.code.toLowerCase()}`}
           />
