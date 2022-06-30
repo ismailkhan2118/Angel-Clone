@@ -1,8 +1,25 @@
-import { Card } from "primereact/card";
 import React from "react";
+import "./EducationCard.scss";
 
-export default function educationCard(props) {
-  const { edu } = props;
+function educationCard(props) {
+  const { edu, saveEdu } = props;
 
-  return;
+  return (
+    <div className="edu-card">
+      <div>{edu}</div>
+      <div>
+        {/* <button
+          onClick={() => {
+            saveEdu(false);
+          }}
+        >
+          {" "}
+          Edit
+        </button> */}
+      </div>
+      educationCard
+    </div>
+  );
 }
+
+export default educationCard;

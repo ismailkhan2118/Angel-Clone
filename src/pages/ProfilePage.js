@@ -2,10 +2,10 @@ import "primeicons/primeicons.css";
 
 import "./ProfilePage.scss";
 import React from "react";
+import EducationCard from "../components/EducationCard";
 import { useState, useEffect } from "react";
 
 import { primaryRoleSelectItems, experience, Degree } from "../data/JobRoles";
-import { educationCard } from "../components/educationCard";
 
 import { InputText } from "primereact/inputtext";
 import { Calendar } from "primereact/calendar";
@@ -25,6 +25,7 @@ export default function ProfilePage() {
   const [edu, setEdu] = useState("");
   const [graddt, setGraddt] = useState("");
   const [user, setUser] = useState("User Name");
+  const [saveEdu, setSaveEdu] = useState(false);
 
   const [exp, setExp] = useState(experience);
   const [gpacheck, setGpaCheck] = useState(true);
@@ -68,8 +69,8 @@ export default function ProfilePage() {
             alt={option.name}
             src="images/flag/flag_placeholder.png"
             onError={(e) =>
-            (e.target.src =
-              "https://www.primefaces.org/wp-content/uploads/2020/05/placeholder.png")
+              (e.target.src =
+                "https://www.primefaces.org/wp-content/uploads/2020/05/placeholder.png")
             }
             className={`flag flag-${option.code.toLowerCase()}`}
           />
@@ -86,6 +87,7 @@ export default function ProfilePage() {
       setError(true);
     } else if (gpa <= maxGpa) {
       setError(false);
+      setSaveEdu(true);
     }
   };
   return (
@@ -402,148 +404,124 @@ export default function ProfilePage() {
                     </div>
                   </div>
                   <div className="right-pane">
-                    {/* <educationCard>
-                      edu={edu}
-                      major={ugMajor}
-                      degree={degree}
-                      gpa={gpa}
-                      maxGpa={maxGpa}
-                      year={graddt}
-                    </educationCard> */}
-                    <div className="grey-pane">
+                    {saveEdu ? (
                       <div>
-                        <div>
-                          <educationCard></educationCard>
-                        </div>
-                        <label htmlFor="Edu">Education</label>
-                        <span>
-                          <InputText
-                            id="Edu"
-                            placeholder="College/University"
-                            name="Edu"
-                            value={edu}
-                            onChange={(e) => setEdu(e.target.value)}
-                          />
-                        </span>
-                      </div>
-                      <div>
-                        <label htmlFor="endgraddt">Graduation</label>
-                      </div>
-                      <div>
-                        <Calendar
-                          id="endgraddt"
-                          name="endgraddt"
-                          placeholder="Graduation"
-                          value={graddt}
-                          onChange={(e) => setGraddt(e.target.value)}
-                        ></Calendar>
-                      </div>
-                      <div>
-                        <label htmlFor="degree">Degree and Major</label>
-                      </div>
-                      <div>
-                        <Dropdown
-                          id="degree"
-                          value={degree}
-                          options={Degree}
-                          onChange={(e) => setDegree(e.value)}
-                          placeholder="Degree Type"
-                        />
-                      </div>
-                      {/* <div>
-                      <InputText
-                        id="major"
-                        name="major"
-                        value={major}
-                        placeholder="Major/Fiels of Study"
-                        onChange={(e) => setMajor(e.value)}
-                      />
-                    </div> */}
-
-                      {/* {major.map((element, index) => {
-                      return (
-                        <div key={index}>
-                          <input
-                            key={index}
-                            type="text"
-                            placeholder="Major/Field of Study"
-                            value={element.oneOfMajors || ""}
-                            onChange={(e) => handleChangeMajorsInput(index, e)}
-                          />
-                        </div>
-                      );
-                    })} */}
-                      <InputText
-                        id="ugMajor"
-                        placeholder="Major/Field of Study"
-                        name="ugMajor"
-                        value={ugMajor}
-                        onChange={(e) => setUgMajor(e.target.value)}
-                      />
-
-                      {/* <div>
-                      <Button
-                        type="button"
-                        label="+Add Major"
-                        onClick={() => addNewMajorfield()}
-                      /> */}
-                      <div>
-                        <label>GPA</label>
-                      </div>
-                      <div>
-                        <span>
-                          <InputText
-                            classname="GPA-class"
-                            type="number"
-                            placeholder="GPA"
-                            value={gpa}
-                            onChange={(e) => setGpa(e.target.value)}
-                          />
-                        </span>
-                        {console.log(gpa)}
-
-                        {error === true ? (
-                          <div>gpa cannot exceed max GPA correct</div>
-                        ) : (
-                          <div>gpa is correct </div>
-                        )}
-
-                        {console.log(gpa)}
-                        <div>
-                          <label>MAX GPA</label>
-                        </div>
-                        {/* {console.log(
-                          `this is saveedEdu details ${saveEduDetails(
-                            gpa,
-                            maxGpa
-                          )}`
-                        )} */}
-
-                        <span>
-                          <InputText
-                            className="GPA-class"
-                            type="number"
-                            placeholder="Max"
-                            value={maxGpa}
-                            onChange={(e) => setMaxGpa(e.target.value)}
-                          />
-                          {console.log(maxGpa)}
-                          {console.log(error)}
-                        </span>
-                      </div>
-                      <div className="btns-div">
+                        <EducationCard
+                          edu={edu}
+                          major={ugMajor}
+                          degree={degree}
+                          gpa={gpa}
+                          maxGpa={maxGpa}
+                          year={graddt}
+                          saveEdu={saveEdu}
+                        ></EducationCard>
                         <button
-                          onClick={validateGpa}
-                          type="button"
-                          className="blue-btn"
+                          onClick={() => {
+                            setSaveEdu(false);
+                          }}
                         >
-                          Save
+                          edit2
                         </button>
-
-                        <button className="cancel-btn">Cancel</button>
                       </div>
-                      {console.log(ugMajor)}
-                    </div>
+                    ) : (
+                      <div className="grey-pane">
+                        <div>
+                          <label htmlFor="Edu">Education</label>
+                          <span>
+                            <InputText
+                              id="Edu"
+                              placeholder="College/University"
+                              name="Edu"
+                              value={edu}
+                              onChange={(e) => setEdu(e.target.value)}
+                            />
+                          </span>
+                        </div>
+                        <div>
+                          <label htmlFor="endgraddt">Graduation</label>
+                        </div>
+                        <div>
+                          <Calendar
+                            id="endgraddt"
+                            name="endgraddt"
+                            placeholder="Graduation"
+                            value={graddt}
+                            onChange={(e) => setGraddt(e.target.value)}
+                          ></Calendar>
+                        </div>
+                        <div>
+                          <label htmlFor="degree">Degree and Major</label>
+                        </div>
+                        <div>
+                          <Dropdown
+                            id="degree"
+                            value={degree}
+                            options={Degree}
+                            onChange={(e) => setDegree(e.value)}
+                            placeholder="Degree Type"
+                          />
+                        </div>
+
+                        <InputText
+                          id="ugMajor"
+                          placeholder="Major/Field of Study"
+                          name="ugMajor"
+                          value={ugMajor}
+                          onChange={(e) => setUgMajor(e.target.value)}
+                        />
+
+                        <div>
+                          <label>GPA</label>
+                        </div>
+                        <div>
+                          <span>
+                            <InputText
+                              classname="GPA-class"
+                              type="number"
+                              placeholder="GPA"
+                              value={gpa}
+                              onChange={(e) => setGpa(e.target.value)}
+                            />
+                          </span>
+                          {console.log(gpa)}
+
+                          {error === true ? (
+                            <div>gpa cannot exceed max GPA correct</div>
+                          ) : (
+                            <div>gpa is correct </div>
+                          )}
+
+                          {console.log(gpa)}
+                          <div>
+                            <label>MAX GPA</label>
+                          </div>
+
+                          <span>
+                            <InputText
+                              className="GPA-class"
+                              type="number"
+                              placeholder="Max"
+                              value={maxGpa}
+                              onChange={(e) => setMaxGpa(e.target.value)}
+                            />
+                            {console.log(maxGpa)}
+                            {console.log(error)}
+                          </span>
+                        </div>
+                        <div className="btns-div">
+                          <button
+                            onClick={validateGpa}
+                            type="button"
+                            className="blue-btn"
+                          >
+                            Save
+                          </button>
+
+                          <button className="cancel-btn">Cancel</button>
+                        </div>
+                        {console.log(ugMajor)}
+                      </div>
+                    )}
                   </div>
                 </div>
               </section>
@@ -603,12 +581,13 @@ export default function ProfilePage() {
                   </div>
                   <div className="right-pane">
                     <div className="achiev-span">1000</div>
-                    <InputTextarea rows={8}>
-                      "It's OK to brag - e.g. I launched 3 successful Facebook
+                    <InputTextarea
+                      rows={8}
+                      placeholder="It's OK to brag - e.g. I launched 3 successful Facebook
                       apps which in total reached 2M+ users and generated $100k+
                       in revenue. I built everything from the front-end to the
-                      back-end and everything in between.
-                    </InputTextarea>
+                      back-end and everything in between."
+                    ></InputTextarea>
                   </div>
                 </div>
               </section>
