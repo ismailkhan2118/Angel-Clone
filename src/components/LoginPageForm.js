@@ -16,8 +16,8 @@ function LoginPageForm(props) {
                 <p>Find the job made for you !</p>
             </div>
             <div className='login-input-div'>
-                <input className='login-input-1' type="email" placeholder='   Email'></input>
-                <input className='login-input-2' type="password" placeholder='   Password'></input>
+                <input className='login-input' type="email" placeholder='   Email'></input>
+                <input className='login-input' type="password" placeholder='   Password'></input>
                 <button className='login-btn' onClick={loginHandler}>Login</button>
             </div>
             <div className='login-signup-div'>

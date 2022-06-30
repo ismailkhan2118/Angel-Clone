@@ -11,7 +11,6 @@ function BaseLayoutPage() {
         <div className="baselayout-main-div">
             <Header></Header>
             <div className="baselayout-sidebar-pages">
-
                 <div>{<SideBar />}</div>
                 <div className="pages-div">
                     <Routes>
