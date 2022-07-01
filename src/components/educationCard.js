@@ -16,7 +16,6 @@ function EducationCard(props) {
           Edit
         </button> */}
         </div>
-        educationCard
       </div>
 
     </div>
