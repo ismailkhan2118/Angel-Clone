@@ -1,8 +1,9 @@
 import "primeicons/primeicons.css";
 
 import "./ProfilePage.scss";
+import "../components/educationCard.scss";
 import React from "react";
-import EducationCard from "../components/EducationCard";
+import EducationCard from "../components/educationCard";
 import { useState, useEffect } from "react";
 
 import { primaryRoleSelectItems, experience, Degree } from "../data/JobRoles";
@@ -28,8 +29,6 @@ export default function ProfilePage() {
   const [saveEdu, setSaveEdu] = useState(false);
 
   const [exp, setExp] = useState(experience);
-  const [gpacheck, setGpaCheck] = useState(true);
-
   const [primaryrole, setPrimaryRole] = useState(primaryRoleSelectItems);
   const [secroles, setSecRoles] = useState([]);
   const [bio, setBio] = useState("");
@@ -38,10 +37,8 @@ export default function ProfilePage() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [degree, setDegree] = useState(Degree);
   const [skills, setSkills] = useState("");
-  const [gpa, setGpa] = useState(0);
-  const [maxGpa, setMaxGpa] = useState(0);
-  const [isGpaCorrect, setIsGpaCorrect] = useState(true);
-
+  const [gpa, setGpa] = useState();
+  const [maxGpa, setMaxGpa] = useState();
   const [error, setError] = useState(false);
   const [ugMajor, setUgMajor] = useState();
 
@@ -83,9 +80,9 @@ export default function ProfilePage() {
   };
 
   const validateGpa = () => {
-    if (+gpa > +parseInt(maxGpa)) {
+    if (+gpa > +maxGpa) {
       setError(true);
-    } else if (gpa <= maxGpa) {
+    } else if (+gpa <= +maxGpa) {
       setError(false);
       setSaveEdu(true);
     }
@@ -405,23 +402,41 @@ export default function ProfilePage() {
                   </div>
                   <div className="right-pane">
                     {saveEdu ? (
-                      <div>
-                        <EducationCard
-                          edu={edu}
-                          major={ugMajor}
-                          degree={degree}
-                          gpa={gpa}
-                          maxGpa={maxGpa}
-                          year={graddt}
-                          saveEdu={saveEdu}
-                        ></EducationCard>
-                        <button
-                          onClick={() => {
-                            setSaveEdu(false);
-                          }}
-                        >
-                          edit2
-                        </button>
+                      <div className="ed-card">
+                        <div>
+                          <img
+                            alt="Avatar for Muffakham Jah College of Engineering and Technology ( Osmania University)"
+                            class="rounded-md"
+                            height="46"
+                            src="https://angel.co/images/shared/nopic_college.png"
+                            width="46"
+                          />
+                        </div>
+                        <div>
+                          <EducationCard
+                            edu={edu}
+                            ugMajor={ugMajor}
+                            degree={degree}
+                            gpa={gpa}
+                            maxGpa={maxGpa}
+                            graddt={graddt.toString().substring(11, 15)}
+                            saveEdu={saveEdu}
+                          ></EducationCard>
+                        </div>
+                        <div>
+                          <button
+                            style={{
+                              color: "#717514",
+                              fontFamily: "Arial,Helvetica,sans-serif",
+                              fontSize: "12px",
+                            }}
+                            onClick={() => {
+                              setSaveEdu(false);
+                            }}
+                          >
+                            Edit
+                          </button>
+                        </div>
                       </div>
                     ) : (
                       <div className="grey-pane">
@@ -431,6 +446,7 @@ export default function ProfilePage() {
                             <InputText
                               id="Edu"
                               placeholder="College/University"
+                              required
                               name="Edu"
                               value={edu}
                               onChange={(e) => setEdu(e.target.value)}
@@ -442,20 +458,37 @@ export default function ProfilePage() {
                         </div>
                         <div>
                           <Calendar
+                            required
                             id="endgraddt"
                             name="endgraddt"
                             placeholder="Graduation"
+                            dateFormat="dd/mm/yy"
                             value={graddt}
                             onChange={(e) => setGraddt(e.target.value)}
                           ></Calendar>
                         </div>
+                        {console.log("this")}
+                        {console.log(edu)}
+                        {console.log(degree)}
+                        {console.log(ugMajor)}
+                        {console.log(graddt)}
+
+                        {console.log(
+                          `this is string type of date ${graddt
+                            .toString()
+                            .substring(11, 15)}`
+                        )}
+
                         <div>
                           <label htmlFor="degree">Degree and Major</label>
                         </div>
                         <div>
                           <Dropdown
+                            required
                             id="degree"
                             value={degree}
+                            optionLabel="label"
+                            optionValue="value"
                             options={Degree}
                             onChange={(e) => setDegree(e.value)}
                             placeholder="Degree Type"
@@ -463,6 +496,7 @@ export default function ProfilePage() {
                         </div>
 
                         <InputText
+                          required
                           id="ugMajor"
                           placeholder="Major/Field of Study"
                           name="ugMajor"
@@ -476,6 +510,7 @@ export default function ProfilePage() {
                         <div>
                           <span>
                             <InputText
+                              required
                               classname="GPA-class"
                               type="number"
                               placeholder="GPA"
@@ -510,7 +545,18 @@ export default function ProfilePage() {
                         </div>
                         <div className="btns-div">
                           <button
-                            onClick={validateGpa}
+                            onClick={() => {
+                              if (
+                                gpa !== "" &&
+                                ugMajor !== "" &&
+                                edu !== "" &&
+                                degree !== "" &&
+                                maxGpa !== "" &&
+                                graddt !== undefined
+                              ) {
+                                validateGpa();
+                              }
+                            }}
                             type="button"
                             className="blue-btn"
                           >
@@ -541,26 +587,6 @@ export default function ProfilePage() {
                       value={skills}
                       onChange={(e) => setSkills(e.value)}
                     ></Chips>
-                    {/* <InputText
-                      type="text"
-                      placeholder="e.g. Python,React"
-                      value={skills}
-                      onChange={(e) => setSkills(e.value)}
-                      onSubmit={(e) => setSkills(e.value)}
-                      
-                    /> */}
-
-                    {/* <Dropdown
-                      value={selectedCountry}
-                      options={countries}
-                      onChange={(e) => setSelectedCountry(e.value)}
-                      optionLabel="name"
-                      filter
-                      showClear
-                      filterBy="name"
-                      placeholder="Select a Country"
-                      itemTemplate={countryOptionTemplate}
-                    /> */}
                   </div>
                 </div>
               </section>
