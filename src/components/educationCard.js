@@ -1,8 +1,25 @@
-import { Card } from "primereact/card";
 import React from "react";
 
-export default function educationCard(props) {
-  const { edu } = props;
+function educationCard(props) {
+  // const { edu, ugMajor, degree, gpa, maxGpa, saveEdu } = props;
 
-  return;
+  return (
+    <div className="edu-card">
+      <div>
+        <div>{props.edu}</div>
+        <div>
+          {props.ugMajor},{props.degree}
+        </div>
+
+        <div>
+          {props.gpa}/{props.maxGpa} GPA
+        </div>
+
+        <div style={{ color: "#717584" }}>{props.graddt}</div>
+        <div>{props.saveEdu}</div>
+      </div>
+    </div>
+  );
 }
+
+export default educationCard;
