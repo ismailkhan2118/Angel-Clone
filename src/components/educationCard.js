@@ -18,6 +18,7 @@ function educationCard(props) {
         <div style={{ color: "#717584" }}>{props.graddt}</div>
         <div>{props.saveEdu}</div>
       </div>
+
     </div>
   );
 }

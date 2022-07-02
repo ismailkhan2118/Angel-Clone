@@ -1,9 +1,9 @@
 import "primeicons/primeicons.css";
 
 import "./ProfilePage.scss";
-import "../components/EducationCard.scss";
+import "../components/educationCard.scss";
 import React from "react";
-import EducationCard from "../components/EducationCard";
+import EducationCard from "../components/educationCard";
 import { useState, useEffect } from "react";
 
 import { primaryRoleSelectItems, experience, Degree } from "../data/JobRoles";
