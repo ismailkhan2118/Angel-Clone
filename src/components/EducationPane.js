@@ -1,6 +1,7 @@
 import React from "react";
+import "./EducationPane.scss";
 
-function educationCard(props) {
+function EducationPane(props) {
   // const { edu, ugMajor, degree, gpa, maxGpa, saveEdu } = props;
 
   return (
@@ -23,4 +24,4 @@ function educationCard(props) {
   );
 }
 
-export default educationCard;
+export default EducationPane;
