@@ -1,5 +1,4 @@
 import React from "react";
-import "./EducationCard.scss";
 
 function educationCard(props) {
   // const { edu, ugMajor, degree, gpa, maxGpa, saveEdu } = props;

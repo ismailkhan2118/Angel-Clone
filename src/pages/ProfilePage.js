@@ -25,7 +25,7 @@ export default function ProfilePage() {
   const [name, setName] = useState("");
   const [edu, setEdu] = useState("");
   const [graddt, setGraddt] = useState("");
-  const [user, setUser] = useState("User Name");
+  const [user, setUser] = useState("Mohammad Abrar Baqtiyar");
   const [saveEdu, setSaveEdu] = useState(false);
 
   const [exp, setExp] = useState(experience);
@@ -94,14 +94,34 @@ export default function ProfilePage() {
                   </div>
 
                   <div className="right-pane">
-                    <div>
-                      <h1>{user}</h1>
+                    <div
+                      style={{
+                        color: "#162040",
+                        fontSize: "24px",
+                        fontFamily:
+                          "Helvetica Neue,arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji",
+                        margin: "0px 0px 18px",
+                      }}
+                    >
+                      {user}
                     </div>
+                    <div
+                      style={{
+                        display: "flex",
+                        textAlign: "center",
+                      }}
+                    >
+                      <img
+                        className="img-style"
+                        src="https://data.whicdn.com/images/305312729/original.jpg?t=1515972463"
+                      />
 
-                    <img
-                      className="img-style"
-                      src="https://data.whicdn.com/images/305312729/original.jpg?t=1515972463"
-                    />
+                      <div>
+                        <button className="photo-btn">
+                          Upload a new photo
+                        </button>
+                      </div>
+                    </div>
 
                     <div>
                       <label htmlFor="Location">Where are you based</label>
