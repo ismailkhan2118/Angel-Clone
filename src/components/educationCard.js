@@ -1,25 +1,28 @@
-import React from 'react';
-import "./educationCard.scss"
 
-function EducationCard(props) {
+
+import React from "react";
+
+function educationCard(props) {
+  // const { edu, ugMajor, degree, gpa, maxGpa, saveEdu } = props;
+
   return (
-    <div>
-      <div className="edu-card">
+    <div className="edu-card">
+      <div>
         <div>{props.edu}</div>
         <div>
-          {/* <button
-          onClick={() => {
-            saveEdu(false);
-          }}
-        >
-          {" "}
-          Edit
-        </button> */}
+          {props.ugMajor},{props.degree}
         </div>
+
+        <div>
+          {props.gpa}/{props.maxGpa} GPA
+        </div>
+
+        <div style={{ color: "#717584" }}>{props.graddt}</div>
+        <div>{props.saveEdu}</div>
       </div>
 
     </div>
   );
 }
 
-export default EducationCard;
+export default educationCard;
