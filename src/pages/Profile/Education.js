@@ -41,7 +41,7 @@ export default function Education() {
             <div className="ed-card">
               <div>
                 <img
-                  alt="Avatar for College"
+                  alt="Avatar for Muffakham Jah College of Engineering and Technology ( Osmania University)"
                   class="rounded-md"
                   height="46"
                   src="https://angel.co/images/shared/nopic_college.png"

@@ -1,4 +1,5 @@
 import React from "react";
+import { PrimeIcons } from "primereact/api";
 import "./ProfilePage.scss";
 import { useState } from "react";
 import { InputText } from "primereact/inputtext";
@@ -8,7 +9,7 @@ import { Chips } from "primereact/chips";
 import CompanyCard from "../../components/CompanyCard";
 
 export default function WorkExp() {
-  const [cmpnyinfo, setCmpnyinfo] = useState({
+  const [companyInfo, setCompanyInfo] = useState({
     companyName: "",
     title: "",
     startDate: "",
@@ -19,7 +20,8 @@ export default function WorkExp() {
     workedOn: "",
     skillsUsed: "",
   });
-  const [savework, setSaveWork] = useState();
+
+  const [saveWork, setSaveWork] = useState();
   return (
     <div>
       <div className="pane-wrapper">
@@ -33,29 +35,16 @@ export default function WorkExp() {
         </div>
 
         <div className="right-pane">
-          {savework ? (
+          {saveWork ? (
             <div className="cmpny-crd">
               <div>
-                <img
-                  alt="Avatar for Work"
-                  class="rounded-md"
-                  height="46"
-                  src="https://angel.co/images/shared/nopic_college.png"
-                  width="46"
-                />
+                <i
+                  className="pi pi-briefcase"
+                  style={{ fontSize: "1.5em" }}
+                ></i>
               </div>
               <div>
-                <CompanyCard
-                  companyname={cmpnyinfo.companyName}
-                  title={cmpnyinfo.title}
-                  startDate={cmpnyinfo.startDate}
-                  endDate={cmpnyinfo.endDate}
-                  currentlyWorkHere={cmpnyinfo.currentlyWorkHere}
-                  description={cmpnyinfo.description}
-                  typeOfPosition={cmpnyinfo.typeOfPosition}
-                  workedOn={cmpnyinfo.workedOn}
-                  skillsUsed={cmpnyinfo.skillsUsed}
-                ></CompanyCard>
+                <CompanyCard companyInfo={companyInfo}></CompanyCard>
               </div>
               <div>
                 <button
@@ -75,29 +64,34 @@ export default function WorkExp() {
           ) : (
             <div className="grey-pane">
               <div>
-                <label htmlFor="cmpnyname">Company Name</label>
+                <label htmlFor="companyName">Company Name</label>
               </div>
 
               <div>
                 <InputText
                   className="p-float-label"
-                  id="cmpnyname"
-                  name="cmpnyname"
-                  value={cmpnyinfo.companyName}
-                  onChange={(e) => setCmpnyinfo(e.target.value)}
+                  id="companyName"
+                  name="companyName"
+                  value={companyInfo.companyName}
+                  onChange={(e) =>
+                    setCompanyInfo({
+                      ...companyInfo,
+                      companyName: e.target.value,
+                    })
+                  }
                 />
               </div>
               <div>
-                <label htmlFor="cmpnytitle">Title</label>
+                <label htmlFor="companytitle">Title</label>
               </div>
               <div>
                 <InputText
-                  id="cmpnytitle"
-                  name="cmpnytitle"
-                  value={cmpnyinfo.title}
+                  id="companytitle"
+                  name="companytitle"
+                  value={companyInfo.title}
                   onChange={(e) =>
-                    setCmpnyinfo({
-                      ...cmpnyinfo,
+                    setCompanyInfo({
+                      ...companyInfo,
                       title: e.target.value,
                     })
                   }
@@ -111,10 +105,10 @@ export default function WorkExp() {
                 <Calendar
                   id="strtcal"
                   name="strtcal"
-                  value={cmpnyinfo.startDate}
+                  value={companyInfo.startDate}
                   onChange={(e) =>
-                    setCmpnyinfo({
-                      ...cmpnyinfo,
+                    setCompanyInfo({
+                      ...companyInfo,
                       startDate: e.value,
                     })
                   }
@@ -128,10 +122,10 @@ export default function WorkExp() {
                 <Calendar
                   id="endcal"
                   name="endcal"
-                  value={cmpnyinfo.endDate}
+                  value={companyInfo.endDate}
                   onChange={(e) =>
-                    setCmpnyinfo({
-                      ...cmpnyinfo,
+                    setCompanyInfo({
+                      ...companyInfo,
                       endDate: e.value,
                     })
                   }
@@ -144,16 +138,17 @@ export default function WorkExp() {
                   name="crntlywrkhere"
                   className="tw-mr-2"
                   type="checkbox"
-                  value={cmpnyinfo.currentlyWorkHere}
+                  value={companyInfo.currentlyWorkHere}
                   onChange={(e) =>
-                    setCmpnyinfo({
-                      ...cmpnyinfo,
-                      currentlyWorkHere: !cmpnyinfo.currentlyWorkHere,
+                    setCompanyInfo({
+                      ...companyInfo,
+                      currentlyWorkHere: companyInfo.currentlyWorkHere,
                     })
                   }
                 />
                 <label htmlFor="crntlywrkhere">Currently Work Here</label>
               </div>
+              {console.log(companyInfo.currentlyWorkHere)}
 
               <div>
                 <label htmlFor="descr">Description</label>
@@ -162,11 +157,11 @@ export default function WorkExp() {
                 <InputTextarea
                   rows={5}
                   cols={35}
-                  value={cmpnyinfo.description}
+                  value={companyInfo.description}
                   placeholder="Description"
                   onChange={(e) =>
-                    setCmpnyinfo({
-                      ...cmpnyinfo,
+                    setCompanyInfo({
+                      ...companyInfo,
                       description: e.target.value,
                     })
                   }
@@ -178,10 +173,10 @@ export default function WorkExp() {
               </div>
               <div>
                 <Chips
-                  value={cmpnyinfo.skillsUsed}
+                  value={companyInfo.skillsUsed}
                   onChange={(e) =>
-                    cmpnyinfo({
-                      ...cmpnyinfo,
+                    companyInfo({
+                      ...companyInfo,
                       skillsUsed: e.target.value,
                     })
                   }
@@ -190,7 +185,7 @@ export default function WorkExp() {
               <div className="btns-div">
                 <button
                   onClick={() => {
-                    console.log("sv btn clicked");
+                    setSaveWork(true);
                   }}
                   type="button"
                   className="blue-btn"
