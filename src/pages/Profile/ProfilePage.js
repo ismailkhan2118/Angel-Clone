@@ -62,6 +62,19 @@ export default function ProfilePage() {
 
               <section>
                 <Achievments></Achievments>
+                <div className="btns-div">
+                  <button
+                    onClick={() => {
+                      console.log("save btn clicked");
+                    }}
+                    type="button"
+                    className="blue-btn"
+                  >
+                    Save
+                  </button>
+
+                  <button className="cancel-btn">Cancel</button>
+                </div>
               </section>
             </TabPanel>
           </TabView>

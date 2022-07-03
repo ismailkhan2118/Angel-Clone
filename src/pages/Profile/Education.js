@@ -41,7 +41,7 @@ export default function Education() {
             <div className="ed-card">
               <div>
                 <img
-                  alt="Avatar for Muffakham Jah College of Engineering and Technology ( Osmania University)"
+                  alt="Avatar for College"
                   class="rounded-md"
                   height="46"
                   src="https://angel.co/images/shared/nopic_college.png"
@@ -143,7 +143,6 @@ export default function Education() {
                     onChange={(e) => setGpa(e.target.value)}
                   />
                 </span>
-                {console.log(gpa)}
 
                 {error === true ? (
                   <div>gpa cannot exceed max GPA correct</div>
@@ -151,7 +150,6 @@ export default function Education() {
                   <div>gpa is correct </div>
                 )}
 
-                {console.log(gpa)}
                 <div>
                   <label>MAX GPA</label>
                 </div>
@@ -164,8 +162,6 @@ export default function Education() {
                     value={maxGpa}
                     onChange={(e) => setMaxGpa(e.target.value)}
                   />
-                  {console.log(maxGpa)}
-                  {console.log(error)}
                 </span>
               </div>
               <div className="btns-div">
@@ -190,7 +186,6 @@ export default function Education() {
 
                 <button className="cancel-btn">Cancel</button>
               </div>
-              {console.log(ugMajor)}
             </div>
           )}
         </div>

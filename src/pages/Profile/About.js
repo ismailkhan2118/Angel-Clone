@@ -125,6 +125,18 @@ export default function About() {
               autoResize
             />
           </div>
+          <div className="btns-div">
+            <button className="cancel-btn">Cancel</button>
+          </div>
+          <button
+            onClick={() => {
+              console.log("save btn clicked");
+            }}
+            type="button"
+            className="blue-btn"
+          >
+            Save
+          </button>
         </div>
       </div>
     </div>

@@ -5,9 +5,10 @@ import { InputText } from "primereact/inputtext";
 import { Calendar } from "primereact/calendar";
 import { InputTextarea } from "primereact/inputtextarea";
 import { Chips } from "primereact/chips";
+import CompanyCard from "../../components/CompanyCard";
 
 export default function WorkExp() {
-  const [prevcmpnyinfo, setPrecmpnyinfo] = useState({
+  const [cmpnyinfo, setCmpnyinfo] = useState({
     companyName: "",
     title: "",
     startDate: "",
@@ -18,9 +19,9 @@ export default function WorkExp() {
     workedOn: "",
     skillsUsed: "",
   });
+  const [savework, setSaveWork] = useState();
   return (
     <div>
-      {" "}
       <div className="pane-wrapper">
         <div className="left-pane">
           <div className="tw-font-semibold tw-text-black">
@@ -32,127 +33,175 @@ export default function WorkExp() {
         </div>
 
         <div className="right-pane">
-          <div>
-            <label htmlFor="prevcmpnyname">Company Name</label>
-          </div>
+          {savework ? (
+            <div className="cmpny-crd">
+              <div>
+                <img
+                  alt="Avatar for Work"
+                  class="rounded-md"
+                  height="46"
+                  src="https://angel.co/images/shared/nopic_college.png"
+                  width="46"
+                />
+              </div>
+              <div>
+                <CompanyCard
+                  companyname={cmpnyinfo.companyName}
+                  title={cmpnyinfo.title}
+                  startDate={cmpnyinfo.startDate}
+                  endDate={cmpnyinfo.endDate}
+                  currentlyWorkHere={cmpnyinfo.currentlyWorkHere}
+                  description={cmpnyinfo.description}
+                  typeOfPosition={cmpnyinfo.typeOfPosition}
+                  workedOn={cmpnyinfo.workedOn}
+                  skillsUsed={cmpnyinfo.skillsUsed}
+                ></CompanyCard>
+              </div>
+              <div>
+                <button
+                  style={{
+                    color: "#717514",
+                    fontFamily: "Arial,Helvetica,sans-serif",
+                    fontSize: "12px",
+                  }}
+                  onClick={() => {
+                    setSaveWork(false);
+                  }}
+                >
+                  Edit
+                </button>
+              </div>
+            </div>
+          ) : (
+            <div className="grey-pane">
+              <div>
+                <label htmlFor="cmpnyname">Company Name</label>
+              </div>
 
-          <div>
-            <InputText
-              className="p-float-label"
-              id="prevcmpnyname"
-              name="prevcmpnyname"
-              value={prevcmpnyinfo.companyName}
-              onChange={(e) => setPrecmpnyinfo(e.target.value)}
-            />
-          </div>
-          <div>
-            <label htmlFor="prevcmpnytitle">Title</label>
-          </div>
-          <div>
-            <InputText
-              id="prevcmpnytitle"
-              name="prevcmpnytitle"
-              value={prevcmpnyinfo.title}
-              onChange={(e) =>
-                setPrecmpnyinfo({
-                  ...prevcmpnyinfo,
-                  title: e.target.value,
-                })
-              }
-            />
-          </div>
-          {console.log(prevcmpnyinfo.title)}
+              <div>
+                <InputText
+                  className="p-float-label"
+                  id="cmpnyname"
+                  name="cmpnyname"
+                  value={cmpnyinfo.companyName}
+                  onChange={(e) => setCmpnyinfo(e.target.value)}
+                />
+              </div>
+              <div>
+                <label htmlFor="cmpnytitle">Title</label>
+              </div>
+              <div>
+                <InputText
+                  id="cmpnytitle"
+                  name="cmpnytitle"
+                  value={cmpnyinfo.title}
+                  onChange={(e) =>
+                    setCmpnyinfo({
+                      ...cmpnyinfo,
+                      title: e.target.value,
+                    })
+                  }
+                />
+              </div>
 
-          <div>
-            <label htmlFor="strtcal">Start Date</label>
-          </div>
-          <div>
-            <Calendar
-              id="strtcal"
-              name="strtcal"
-              value={prevcmpnyinfo.startDate}
-              onChange={(e) =>
-                setPrecmpnyinfo({
-                  ...prevcmpnyinfo,
-                  startDate: e.value,
-                })
-              }
-            ></Calendar>
-          </div>
-          {console.log(`start date is ${prevcmpnyinfo.endDate}`)}
+              <div>
+                <label htmlFor="strtcal">Start Date</label>
+              </div>
+              <div>
+                <Calendar
+                  id="strtcal"
+                  name="strtcal"
+                  value={cmpnyinfo.startDate}
+                  onChange={(e) =>
+                    setCmpnyinfo({
+                      ...cmpnyinfo,
+                      startDate: e.value,
+                    })
+                  }
+                ></Calendar>
+              </div>
 
-          <div>
-            <label htmlFor="endcal">End Date</label>
-          </div>
-          <div>
-            <Calendar
-              id="endcal"
-              name="endcal"
-              value={prevcmpnyinfo.endDate}
-              onChange={(e) =>
-                setPrecmpnyinfo({
-                  ...prevcmpnyinfo,
-                  endDate: e.value,
-                })
-              }
-            ></Calendar>
-          </div>
+              <div>
+                <label htmlFor="endcal">End Date</label>
+              </div>
+              <div>
+                <Calendar
+                  id="endcal"
+                  name="endcal"
+                  value={cmpnyinfo.endDate}
+                  onChange={(e) =>
+                    setCmpnyinfo({
+                      ...cmpnyinfo,
+                      endDate: e.value,
+                    })
+                  }
+                ></Calendar>
+              </div>
 
-          {console.log(`end date is ${prevcmpnyinfo.endDate}`)}
-          <div>
-            <input
-              id="crntlywrkhere"
-              name="crntlywrkhere"
-              className="tw-mr-2"
-              type="checkbox"
-              value={prevcmpnyinfo.currentlyWorkHere}
-              onChange={(e) =>
-                setPrecmpnyinfo({
-                  ...prevcmpnyinfo,
-                  currentlyWorkHere: !prevcmpnyinfo.currentlyWorkHere,
-                })
-              }
-            />
-            <label htmlFor="crntlywrkhere">Currently Work Here</label>
-          </div>
+              <div>
+                <input
+                  id="crntlywrkhere"
+                  name="crntlywrkhere"
+                  className="tw-mr-2"
+                  type="checkbox"
+                  value={cmpnyinfo.currentlyWorkHere}
+                  onChange={(e) =>
+                    setCmpnyinfo({
+                      ...cmpnyinfo,
+                      currentlyWorkHere: !cmpnyinfo.currentlyWorkHere,
+                    })
+                  }
+                />
+                <label htmlFor="crntlywrkhere">Currently Work Here</label>
+              </div>
 
-          {console.log(prevcmpnyinfo.currentlyWorkHere)}
-          <div>
-            <label htmlFor="descr">Description</label>
-          </div>
-          <div>
-            <InputTextarea
-              rows={5}
-              cols={35}
-              value={prevcmpnyinfo.description}
-              placeholder="Description"
-              onChange={(e) =>
-                setPrecmpnyinfo({
-                  ...prevcmpnyinfo,
-                  description: e.target.value,
-                })
-              }
-              autoResize
-            />
-          </div>
-          <div>
-            <label htmlFor="skilsusd">Skills developed</label>
-          </div>
-          <div>
-            <Chips
-              value={prevcmpnyinfo.skillsUsed}
-              onChange={(e) =>
-                setPrecmpnyinfo({
-                  ...prevcmpnyinfo,
-                  skillsUsed: e.target.value,
-                })
-              }
-            ></Chips>
-          </div>
-          <div className="btns-div">
-            <button className="cancel-btn"> Cancel</button>
-            <button className="blue-btn">Save</button>
-          </div>
+              <div>
+                <label htmlFor="descr">Description</label>
+              </div>
+              <div>
+                <InputTextarea
+                  rows={5}
+                  cols={35}
+                  value={cmpnyinfo.description}
+                  placeholder="Description"
+                  onChange={(e) =>
+                    setCmpnyinfo({
+                      ...cmpnyinfo,
+                      description: e.target.value,
+                    })
+                  }
+                  autoResize
+                />
+              </div>
+              <div>
+                <label htmlFor="skillsused">Skills developed</label>
+              </div>
+              <div>
+                <Chips
+                  value={cmpnyinfo.skillsUsed}
+                  onChange={(e) =>
+                    cmpnyinfo({
+                      ...cmpnyinfo,
+                      skillsUsed: e.target.value,
+                    })
+                  }
+                ></Chips>
+              </div>
+              <div className="btns-div">
+                <button
+                  onClick={() => {
+                    console.log("sv btn clicked");
+                  }}
+                  type="button"
+                  className="blue-btn"
+                >
+                  Save
+                </button>
+
+                <button className="cancel-btn">Cancel</button>
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </div>
