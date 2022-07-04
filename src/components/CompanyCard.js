@@ -30,6 +30,7 @@ export default function CompanyCard(props) {
       </div>
       {console.log(props.companyInfo.currentlyWorkHere)}
       <div>{props.companyInfo.description}</div>
+      <div>{props.companyInfo.companyId}</div>
     </div>
   );
 }

@@ -1,7 +1,8 @@
 import React from "react";
 import { PrimeIcons } from "primereact/api";
+import { v4 as uuid } from "uuid";
 import "./ProfilePage.scss";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { InputText } from "primereact/inputtext";
 import { Calendar } from "primereact/calendar";
 import { InputTextarea } from "primereact/inputtextarea";
@@ -10,6 +11,7 @@ import CompanyCard from "../../components/CompanyCard";
 
 export default function WorkExp() {
   const [companyInfo, setCompanyInfo] = useState({
+    companyId: "",
     companyName: "",
     title: "",
     startDate: "",
@@ -20,6 +22,10 @@ export default function WorkExp() {
     workedOn: "",
     skillsUsed: "",
   });
+  const unique_id = uuid();
+  const small_id = unique_id.slice(0, 8);
+
+  const [arrayWorkExp, setArrayWorkExp] = useState([companyInfo]);
   const [companyNameEmpty, setCompanyNameEmpty] = useState();
   const [titleEmpty, setTitleEmpty] = useState();
   const [startDateEmpty, setStartDateEmpty] = useState();
@@ -63,13 +69,18 @@ export default function WorkExp() {
                   Edit
                 </button>
               </div>
+
+              <div>
+                <button style={{ color: "blue" }} onClick={() => {}}>
+                  + Add work experience
+                </button>
+              </div>
             </div>
           ) : (
             <div className="grey-pane">
               <div>
                 <label htmlFor="companyName">Company Name</label>
               </div>
-
               <div>
                 <InputText
                   className="p-float-label"
@@ -110,7 +121,6 @@ export default function WorkExp() {
               <div style={{ color: "red" }}>
                 {titleEmpty ? <div>Title is required* </div> : <div></div>}
               </div>
-              {console.log(`this  is title ${titleEmpty}`)}
 
               <div>
                 <label htmlFor="strtcal">Start Date</label>
@@ -135,7 +145,6 @@ export default function WorkExp() {
                   <div>{}</div>
                 )}
               </div>
-
               <div>
                 <label htmlFor="endcal">End Date</label>
               </div>
@@ -152,7 +161,6 @@ export default function WorkExp() {
                   }
                 ></Calendar>
               </div>
-
               <div>
                 <input
                   id="crntlywrkhere"
@@ -169,7 +177,6 @@ export default function WorkExp() {
                 />
                 <label htmlFor="crntlywrkhere">Currently Work Here</label>
               </div>
-              {console.log(companyInfo.currentlyWorkHere)}
 
               <div>
                 <label htmlFor="descr">Description</label>
@@ -203,22 +210,16 @@ export default function WorkExp() {
                   }
                 ></Chips>
               </div>
-              {/* <div>
-              <Dropdown
-                value={secroles}
-                options={primaryRoleSelectItems}
-                onChange={(e) => setSecRoles([...secroles, e.target.value])}
-                optionLabel="label"
-                optionGroupLabel="label"
-                optionGroupChildren="items"
-              />
-            </div> */}
+
               <div className="btns-div">
+                <button className="cancel-btn" onClick={() => {}}>
+                  Remove Position
+                </button>
+
                 <button
-                  onClick={() => {
-                    console.log(
-                      `this is the empty date ${companyInfo.startDate}`
-                    );
+                  onClick={(e) => {
+                    console.log(arrayWorkExp);
+
                     if (companyInfo.companyName === "") {
                       setCompanyNameEmpty(true);
                     } else if (companyInfo.companyName !== "") {
@@ -230,11 +231,25 @@ export default function WorkExp() {
                         if (companyInfo.startDate === null) {
                           setStartDateEmpty(true);
                         } else if (companyInfo.startDate !== null) {
+                          setCompanyInfo({
+                            ...companyInfo,
+                            companyId: small_id,
+                          });
+
+                          // if (
+                          //   companyInfo.companyId !==
+                          //   arrayWorkExp.map((info) => {
+                          //     if (info.companyId) {
+                          //     }
+                          //   })
+                          // ) {
+                          // }
+                          setArrayWorkExp([...arrayWorkExp, companyInfo]);
+
                           setStartDateEmpty(false);
+                          setSaveWork(true);
                         }
                       }
-                    } else {
-                      setSaveWork(true);
                     }
                   }}
                   type="button"
