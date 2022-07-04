@@ -1,9 +1,7 @@
 import "primeicons/primeicons.css";
 
 import "./ProfilePage.scss";
-import "../components/educationCard.scss";
 import React from "react";
-import EducationCard from "../components/educationCard";
 import { useState, useEffect } from "react";
 
 import { primaryRoleSelectItems, experience, Degree } from "../data/JobRoles";
@@ -21,10 +19,12 @@ import { TabView, TabPanel } from "primereact/tabview";
 import { ToggleButton } from "primereact/togglebutton";
 import Overview from "./Overview";
 
+import EducationPane from '../components/EducationPane'
+
 export default function ProfilePage() {
   const [name, setName] = useState("");
   const [edu, setEdu] = useState("");
-  const [graddt, setGraddt] = useState("");
+  const [graddt, setGraddt] = useState(null);
   const [user, setUser] = useState("Mohammad Abrar Baqtiyar");
   const [saveEdu, setSaveEdu] = useState(false);
 
@@ -66,11 +66,11 @@ export default function ProfilePage() {
       setSaveEdu(true);
     }
   };
+
+
   return (
     <div className="profile-container">
-      {/* <h1>Edit your Unicorn List Profile</h1> */}
       <div className="main-container">
-        {/* <h1>Edit your Unicorn List Profile</h1> */}
         <form onSubmit={handleSubmit}>
           <TabView
             activeIndex={activeIndex}
@@ -82,7 +82,6 @@ export default function ProfilePage() {
             </TabPanel>
 
             <TabPanel header="Profile">
-              {console.log(activeIndex)}
 
               <section>
                 <div className="pane-wrapper">
@@ -197,8 +196,8 @@ export default function ProfilePage() {
                   </div>
                 </div>
               </section>
-
               <hr></hr>
+
               <section>
                 <div className="pane-wrapper">
                   <div className="left-pane">
@@ -252,6 +251,7 @@ export default function ProfilePage() {
                 </div>
               </section>
               <hr></hr>
+
               <section>
                 <div className="pane-wrapper">
                   <div className="left-pane">
@@ -389,6 +389,7 @@ export default function ProfilePage() {
                 </div>
               </section>
               <hr></hr>
+
               <section>
                 <div className="pane-wrapper">
                   <div className="left-pane">
@@ -412,15 +413,15 @@ export default function ProfilePage() {
                           />
                         </div>
                         <div>
-                          <EducationCard
+                          <EducationPane
                             edu={edu}
                             ugMajor={ugMajor}
                             degree={degree}
                             gpa={gpa}
                             maxGpa={maxGpa}
-                            graddt={graddt.toString().substring(11, 15)}
+                            graddt={new Date(graddt).getFullYear()}
                             saveEdu={saveEdu}
-                          ></EducationCard>
+                          ></EducationPane>
                         </div>
                         <div>
                           <button
@@ -464,19 +465,9 @@ export default function ProfilePage() {
                             dateFormat="dd/mm/yy"
                             value={graddt}
                             onChange={(e) => setGraddt(e.target.value)}
+                            keepInvalid={true}
                           ></Calendar>
                         </div>
-                        {console.log("this")}
-                        {console.log(edu)}
-                        {console.log(degree)}
-                        {console.log(ugMajor)}
-                        {console.log(graddt)}
-
-                        {console.log(
-                          `this is string type of date ${graddt
-                            .toString()
-                            .substring(11, 15)}`
-                        )}
 
                         <div>
                           <label htmlFor="degree">Degree and Major</label>
@@ -571,6 +562,7 @@ export default function ProfilePage() {
                 </div>
               </section>
               <hr></hr>
+
               <section>
                 <div className="pane-wrapper">
                   <div className="left-pane">
@@ -590,6 +582,7 @@ export default function ProfilePage() {
                 </div>
               </section>
               <hr></hr>
+
               <section>
                 <div className="pane-wrapper">
                   <div className="left-pane">
@@ -616,11 +609,6 @@ export default function ProfilePage() {
                   </div>
                 </div>
               </section>
-
-              {/* {console.log(prevcmpnyinfo.description)}
-              {console.log(prevcmpnyinfo.skillsUsed)} */}
-
-              {name}
             </TabPanel>
           </TabView>
         </form>

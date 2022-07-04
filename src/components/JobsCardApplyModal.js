@@ -35,7 +35,7 @@ function JobsCardApplyModal(props) {
                         <textarea placeholder={`Write a note to Hr name at Company name`} rows="4" className='apply-textarea'></textarea>
                     </div>
                     <div className='btns'>
-                        <button className='cancel-btn'  >Cancel</button>
+                        <button className='cancel-btn' onClick={props.onCancel}>Cancel</button>
                         <button className='sending-btn' >Send Application</button>
                     </div>
                 </div>

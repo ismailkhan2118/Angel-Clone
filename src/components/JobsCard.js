@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 import "./JobsCard.scss"
 import { useState } from "react"
 import { Dialog } from "primereact/dialog"
@@ -9,38 +9,12 @@ import JobsCardApplyModal from "./JobsCardApplyModal";
 
 
 function JobsCard(props) {
-    const [displayBasic2, setDisplayBasic2] = useState(false);
-    const [position, setPosition] = useState("center");
-    const dialogFuncMap = { displayBasic2: setDisplayBasic2 };
 
-    const onClick = (name, position) => {
-        dialogFuncMap[`${name}`](true);
+    const [showApplicationModal, setShowApplicationModal] = useState(false);
 
-        if (position) {
-            setPosition(position);
-        }
-    };
-
-    const onHide = (name) => {
-        dialogFuncMap[`${name}`](false);
-    };
-
-    const renderFooter = (name) => {
-        return (
-            <div>
-                <Button
-                    label="No"
-                    icon="pi pi-times"
-                    onClick={() => onHide(name)}
-                    className="p-button-text"
-                />
-                <Button
-
-                />
-            </div>
-        );
-    };
-
+    const onCancel = () => {
+        setShowApplicationModal(false);
+    }
 
     return (
         <div className="jobs-card-container">
@@ -65,19 +39,17 @@ function JobsCard(props) {
                     </div>
                     <div className="jobs-card-apply-save">
                         <button className="save-btn"  >Save</button>
-                        <button className="apply-btn" onClick={() => onClick("displayBasic2")}>Apply</button>
+                        <button className="apply-btn" onClick={() => { setShowApplicationModal(true) }}>Apply</button>
                     </div>
                 </div>
             </div>
             <Dialog
                 dismissableMask={true}
                 className="dialog-page"
-                // header="Apply Filters"
-                visible={displayBasic2}
-                // footer={renderFooter("displayBasic2")}
-                onHide={() => onHide("displayBasic2")}
+                visible={showApplicationModal}
+                onHide={onCancel}
             >
-                <JobsCardApplyModal coimg={props.coimg} coname={props.coname}></JobsCardApplyModal>
+                <JobsCardApplyModal onCancel={onCancel} coimg={props.coimg} coname={props.coname}></JobsCardApplyModal>
             </Dialog>
         </div>
     )
