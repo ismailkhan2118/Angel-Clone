@@ -2,24 +2,23 @@ import React from "react";
 import "./EducationPane.scss";
 
 function EducationPane(props) {
-  // const { edu, ugMajor, degree, gpa, maxGpa, saveEdu } = props;
+  const { edu, ugMajor, degree, gpa, maxGpa, saveEdu, graddt } = props;
 
   return (
     <div className="edu-card">
       <div>
-        <div>{props.edu}</div>
+        <div>{edu}</div>
         <div>
-          {props.ugMajor},{props.degree}
+          {ugMajor},{degree}
         </div>
 
         <div>
-          {props.gpa}/{props.maxGpa} GPA
+          {gpa}/{maxGpa} GPA
         </div>
 
-        <div style={{ color: "#717584" }}>{props.graddt}</div>
-        <div>{props.saveEdu}</div>
+        <div style={{ color: "#717584" }}>{graddt}</div>
+        <div>{saveEdu}</div>
       </div>
-
     </div>
   );
 }
