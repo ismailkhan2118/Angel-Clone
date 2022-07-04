@@ -24,10 +24,11 @@ export default function CompanyCard(props) {
       <div style={{ color: "#0A6CFF" }}>{props.companyInfo.companyName}</div>
       <div style={{ color: "#717584" }}>
         {new Date(startDt).toDateString()} {" to "}
-        {props.companyInfo.currentlyWorkHere
+        {props.companyInfo.currentlyWorkHere === true
           ? a
           : new Date(endDt).toDateString()}
       </div>
+      {console.log(props.companyInfo.currentlyWorkHere)}
       <div>{props.companyInfo.description}</div>
     </div>
   );

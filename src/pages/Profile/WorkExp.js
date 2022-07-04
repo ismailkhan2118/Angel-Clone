@@ -20,8 +20,11 @@ export default function WorkExp() {
     workedOn: "",
     skillsUsed: "",
   });
-
+  const [companyNameEmpty, setCompanyNameEmpty] = useState();
+  const [titleEmpty, setTitleEmpty] = useState();
+  const [startDateEmpty, setStartDateEmpty] = useState();
   const [saveWork, setSaveWork] = useState();
+
   return (
     <div>
       <div className="pane-wrapper">
@@ -81,6 +84,13 @@ export default function WorkExp() {
                   }
                 />
               </div>
+              <div style={{ color: "red" }}>
+                {companyNameEmpty ? (
+                  <div>Company is required* </div>
+                ) : (
+                  <div></div>
+                )}
+              </div>
               <div>
                 <label htmlFor="companytitle">Title</label>
               </div>
@@ -97,6 +107,10 @@ export default function WorkExp() {
                   }
                 />
               </div>
+              <div style={{ color: "red" }}>
+                {titleEmpty ? <div>Title is required* </div> : <div></div>}
+              </div>
+              {console.log(`this  is title ${titleEmpty}`)}
 
               <div>
                 <label htmlFor="strtcal">Start Date</label>
@@ -113,6 +127,13 @@ export default function WorkExp() {
                     })
                   }
                 ></Calendar>
+              </div>
+              <div style={{ color: "red" }}>
+                {startDateEmpty ? (
+                  <div>start date is required* </div>
+                ) : (
+                  <div>{}</div>
+                )}
               </div>
 
               <div>
@@ -142,7 +163,7 @@ export default function WorkExp() {
                   onChange={(e) =>
                     setCompanyInfo({
                       ...companyInfo,
-                      currentlyWorkHere: companyInfo.currentlyWorkHere,
+                      currentlyWorkHere: !companyInfo.currentlyWorkHere,
                     })
                   }
                 />
@@ -182,10 +203,39 @@ export default function WorkExp() {
                   }
                 ></Chips>
               </div>
+              {/* <div>
+              <Dropdown
+                value={secroles}
+                options={primaryRoleSelectItems}
+                onChange={(e) => setSecRoles([...secroles, e.target.value])}
+                optionLabel="label"
+                optionGroupLabel="label"
+                optionGroupChildren="items"
+              />
+            </div> */}
               <div className="btns-div">
                 <button
                   onClick={() => {
-                    setSaveWork(true);
+                    console.log(
+                      `this is the empty date ${companyInfo.startDate}`
+                    );
+                    if (companyInfo.companyName === "") {
+                      setCompanyNameEmpty(true);
+                    } else if (companyInfo.companyName !== "") {
+                      setCompanyNameEmpty(false);
+                      if (companyInfo.title === "") {
+                        setTitleEmpty(true);
+                      } else if (companyInfo.title !== "") {
+                        setTitleEmpty(false);
+                        if (companyInfo.startDate === null) {
+                          setStartDateEmpty(true);
+                        } else if (companyInfo.startDate !== null) {
+                          setStartDateEmpty(false);
+                        }
+                      }
+                    } else {
+                      setSaveWork(true);
+                    }
                   }}
                   type="button"
                   className="blue-btn"
