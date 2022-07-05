@@ -8,6 +8,7 @@
     "@testing-library/react": "^13.2.0",
     "@testing-library/user-event": "^13.5.0",
     "ejs": "^3.1.8",
+    "firebase": "^9.8.4",
     "i": "^0.3.7",
     "npm": "^8.13.2",
     "primeicons": "^5.0.0",
