@@ -11,7 +11,7 @@ import About from "./About.js";
 import SocialProfiles from "./SocialProfiles";
 import WorkExp from "./WorkExp";
 import Education from "./Education";
-import Skills from "./Skills";
+import Skills from "../../components/Skills";
 import Achievments from "./Achievments";
 
 export default function ProfilePage() {
