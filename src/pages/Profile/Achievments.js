@@ -11,7 +11,7 @@ export default function Achievments() {
           <div className="tw-font-semibold tw-text-black" color="#162040">
             Achievments
           </div>
-          <div classname="section-description">
+          <div className="section-description">
             Sharing more details about yourself will help you stand out more.
           </div>
         </div>

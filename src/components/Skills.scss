@@ -1,0 +1,13 @@
+.skill-search{
+
+}
+.skill-dd{
+    border: 1px solid #cecece;
+    .dd-option{
+        padding: 0.75rem;
+        cursor: pointer;
+        &:hover{
+            background-color: rgba(15,111,255,0.2);
+        }
+    }
+}
