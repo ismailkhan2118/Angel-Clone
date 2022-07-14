@@ -105,8 +105,8 @@ function JobsPage() {
         <h1 className="jobs-h1">Search For Jobs</h1>
       </div>
       <nav className="jobs-nav">
-        <span>Browse all</span>
-        <span>Saved</span>
+        <span className="">Browse all</span>
+        <span className="">Saved</span>
       </nav>
       <div className="jobs-filters-div">
         <div className="chips">

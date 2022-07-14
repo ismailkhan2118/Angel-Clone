@@ -38,7 +38,7 @@ div {
   }
   &.chips {
     max-width: 455px;
-    .p-chips .p-chips-multiple-container{
+    .p-chips .p-chips-multiple-container {
       width: 100% !important;
     }
   }
@@ -65,12 +65,9 @@ nav {
   display: flex;
   align-items: flex-start;
 }
-span:hover {
-  text-decoration: underline;
-}
+
 .jobs-title-chip {
   width: 100%;
-
 }
 button {
   &.filter-btn {
@@ -82,4 +79,3 @@ button {
   background-color: #000 !important;
   width: 960px;
 }
-

@@ -1,20 +1,37 @@
 import React from "react";
 import "./JobsModal.scss";
-import { useState } from "react";
+import { useState, useReducer } from "react";
 import { Slider } from "primereact/slider";
 import { InputText } from "primereact/inputtext";
 import { Chips } from "primereact/chips";
+import { type } from "@testing-library/user-event/dist/type";
+const reducer = (state, action) => {
 
+  if (action.type === "FULL-TIME") {
+    console.log(state)
+    return state?.length;
+  }
+
+
+  return state;
+}
 
 function JobsModal() {
+  const initialState = { fulltime: "Fulltime", };
+  const [fullTimeFilter, setFullTimeFilter] = useState("FUll-TIme")
+
   const [value5, setValue5] = useState([10, 95]);
   const [experience, setExperrience] = useState([0, 8]);
+  const [chipValue, setChipValue] = useState([])
   const [value1, setValue1] = useState("");
+  const [state, dispatch] = useReducer(reducer, initialState)
+  console.log(state)
+  console.log(fullTimeFilter)
   return (
     <div className="jobs-modal-container">
       <div className="jobs-modal-header">Header</div>
       <div className="jobs-modal-filter">
-        <Chips></Chips>
+        <Chips value={chipValue} onChange={(e) => { setChipValue(e.target.value) }}></Chips>
 
       </div>
       <div className="salary-skills">
@@ -31,19 +48,21 @@ function JobsModal() {
             <h2>Jobs Type</h2>
             <hr />
             <div>
-              <input type="checkbox" id="f-t" />
+              <input type="checkbox" name="Fulltime" value={chipValue} onClick={(e) => { setChipValue([...chipValue, e.target.name]) }} id="f-t" />
               <label htmlFor="f-t">Full Time  </label>
             </div>
             <div>
-              <input type="checkbox" id="intern" />
+              <input type="checkbox" name="Internship" value={chipValue} onClick={(e) => { setChipValue([...chipValue, e.target.name]) }} id="intern" />
               <label className="intern">Internship </label>
             </div>
             <div>
-              <input type="checkbox" id="contract" onChange />
+              <input value={chipValue} name=" Contract" type="checkbox" id="contract" onChange={(e) => {
+                setChipValue([...chipValue, e.target.name])
+              }} />
               <label className="contract">  Contract</label>
             </div>
             <div>
-              <input type="checkbox" id="co-founder" onChange />
+              <input name="co founder" value={chipValue} type="checkbox" id="co-founder" onChange={(e) => { setChipValue([...chipValue, e.target.name]) }} />
               <label className="co-founder"> Co Founder</label>
             </div>
 
