@@ -31,7 +31,7 @@ function JobsModal() {
     <div className="jobs-modal-container">
       <div className="jobs-modal-header">Header</div>
       <div className="jobs-modal-filter">
-        <Chips value={chipValue} onChange={(e) => { setChipValue(e.target.value) }}></Chips>
+        <Chips className="chip-input" value={chipValue} onChange={(e) => { setChipValue(e.target.value) }}></Chips>
 
       </div>
       <div className="salary-skills">
